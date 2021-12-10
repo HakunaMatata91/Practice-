@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple simulator of casino roulette</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // - Create a prompt window (use confirm()). Show the message inside the window ‘Do you want to play a game?’.
+    // - In case the user clicks the 'Cancel' button, the message 'You did not become a billionaire, but can.'
+    // should be shown (use alert).
+    //Step 2:
+    // - If user clicked ‘Ok’ – start a game: randomly (use Math.random()) choose an integer number in range [0; 8] (including 0 and 8) and ask user to enter a number of pocket on which the ball could land (use prompt()).
+    // - User has 3 attempts to guess a number.
+    // - If user guessed the number on which ball landed, on 1-st attempt prize is 100$ (maximum prize
+    // for current numbers range), 2-nd attempt – 50$, 3-rd attempt – 25$.
+    // - If user did not guess a number show the message ‘Thank you for your participation.
+
+    let chosenCase = confirm("Do you want to play a game?" );
+    let firstAttempt = 100;
+    let secondAttempt = 50;
+    let thirdAttempt = 25;
+    let baseBet = 100;
+    let userChoice;
+    let userWon;
+    if (!chosenCase ) {
+        alert("You did not become a billionaire, but can:)")
+    } else {
+
+        let random = Math.floor(Math.random() * 9);
+        console.log(random)
+
+        for (let i = 0; i < 3; i++) {
+            userChoice = +prompt("Enter a number of pocket from 0 to 8");
+            if(userChoice === random){
+                if(i === 0){
+                    userWon = firstAttempt;
+                }else if(i === 1){
+                    userWon = secondAttempt;
+                }else{
+                    userWon = thirdAttempt;
+                }
+                break;
+            }
+        }
+        if (userWon > 0) {
+            alert(`Congratulation, you won! Your prize is: ${userWon}`);
+        } else {
+            alert("Thank you for your participation. Your prize is")
+        }
+
+    }
+</script>
+</html>
