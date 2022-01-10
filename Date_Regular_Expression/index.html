@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date. Regular Expression</title>
+  </head>
+  <body>
+<!--  <div>-->
+<!--    <p>5. Write a function that accepts a weekday as a string (e.g. ‘Sunday’) and returns the number of days to the next specified weekday. </p>-->
+<!--    <input id="inputField" type="text">-->
+<!--    <input type="button" value="Button">-->
+<!--  </div>-->
+<form>
+  <input type="text" id="variable" placeholder="input variable"/>
+  <button type="submit" onClick="validate(input)">submit</button>
+</form>
+  </body>
+  <script>
+    //1.Write a function that accepts a person's date of birth as an input and returns the person's exact age today.
+    console.log('1. Write a function that accepts a person date of birth as an input and returns the person exact age\n' + 'today.');
+
+    let myBirthday = new Date(2000, 9, 22);
+    function getAge(myBirthday){
+      let now = new Date();
+      let results = now.getFullYear() - myBirthday.getFullYear()
+      console.log(`My age is ${results} years`);
+      return results;
+    }
+    getAge(myBirthday)
+
+    //2.Write a function that accepts a date/timestamp and returns a textual representation of the corresponding weekday (i.e. 'Monday', 'Tuesday', etc.). For the sake of the task, let’s assume that the input is always a valid date object or a timestamp.
+    console.log('2. Write a function that accepts a date/timestamp and returns a textual representation of the corresponding weekday (i.e. \'Monday\', \'Tuesday\', etc.). For the sake of the task, let’s assume that the input is always a valid date object or a timestamp.');
+
+    let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    function getWeekDay(weekdays){
+      let currentDay = new Date();
+      let getCurrentDay = currentDay.getDay();
+      currentDay = `${weekdays[getCurrentDay]}`
+      return currentDay;
+    }
+    let presentDay = getWeekDay(weekdays);
+    console.log(`Today is ${presentDay}` );
+
+    //3. Write a function that will return the number of days until the New Year.
+    console.log('3. Write a function that will return the number of days until the New Year.');
+
+    const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+    function getAmountDaysToNewYear (){
+      let nowadays = new Date();
+      let crismasDay = new Date(nowadays.getFullYear(), 11, 31);
+      let daysToNewYear =  crismasDay - nowadays;
+
+      return Math.floor(daysToNewYear / _MS_PER_DAY) ;
+
+    }
+    let daysTo = getAmountDaysToNewYear();
+    console.log(`New Year will come in ${daysTo} days`);
+
+    //4. Write a function that accepts a year as a number and returns the date of Programmer’s Day in the year specified. The return value should be a string in the following format: ‘DD Mon, YYYY (weekday)’. Reuse the function from the task 2. The Day of the Programmer is celebrated on the 256th day of each year ).
+    console.log('4. Write a function that accepts a year as a number and returns the date of Programmer’s Day in the year specified. The return value should be a string in the following format: ‘DD Mon, YYYY (weekday)’. Reuse the function from the task 2. The Day of the Programmer is celebrated on the 256th day of each year');
+
+    const perDay = 1000 * 60 * 60 * 24;
+    const weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+    function getProgrammersDay (){
+      let xDay = 255;
+      let specialDay = new Date();
+      let getSpecialDay = new Date(specialDay.getFullYear(), 0, 1);
+      let calc = getSpecialDay.getTime() + (xDay * perDay);
+      let result = new Date(calc);
+      return `${result.getDate()} ${months[result.getMonth()]}` + ", " + `${result.getFullYear()}` + " " + "(" + `${weekDay[result.getDay()]}` + ")" ;
+    }
+    let programmersDay = getProgrammersDay();
+    console.log("The Day of the Programmer is celebrated on" + " " + `${programmersDay}`);
+
+//5. Write a function that accepts a weekday as a string (e.g. ‘Sunday’) and returns the number of days to the next specified weekday. The input should be case-insensitive. If the specified weekday is today, return
+    console.log('5. Write a function that accepts a weekday as a string (e.g. ‘Sunday’) and returns the number of days to the next specified weekday. The input should be case-insensitive. If the specified weekday is today, return `Hey, today is ${ specifiedWeekday } =)`, otherwise return `It\'s ${ number } day(s) left till ${ specifiedWeekday }`.');
+
+    // function howFarIs (day){
+    //   //current date convertion
+    //   let specifiedWeekday = new Date();
+    //   let todayIndex = specifiedWeekday.getDay();
+    //   console.log(`specified ${specifiedWeekday} => ${todayIndex}`);
+    //
+    //   //input converting
+    //   let inputIndex = weekDay.indexOf(day);
+    //   console.log(`input ${day} => ${inputIndex}`);
+    //
+    //
+    //   if(inputIndex === inputIndex){
+    //     console.log("today is a " + `${specifiedWeekday}`);
+    //     return 0;
+    //   }
+    //   else{
+    //     let diffInTime = inputIndex.getTime() - inputIndex.getTime();
+    //     let diffDays = Math.round(diffInTime / perDay);
+    //
+    //     return diffDays;
+    //   }
+    // }
+    // //1- take an input (desired day)
+    // let userInput =  "Friday";//document.getElementById("inputField");
+    // console.log(`userInput ${userInput} `);
+    //
+    // howFarIs(userInput)
+
+//6. Write a function that accepts a string as an input and returns a boolean that defines if the input is a valid JavaScript variable. Use a regular expression to validate the input. Here is the syntax for valid identifiers:
+console.log('6. Write a function that accepts a string as an input and returns a boolean that defines if the input is a valid JavaScript variable. Use a regular expression to validate the input. Here is the syntax for valid identifiers:\n' +
+        '- each identifier must have at least one character.\n' +
+        '- valid identifier characters are the following: alpha, digit, underscore, or dollar sign.\n' +
+        '- the first character cannot be a digit.')
+
+    const regEx = /([a-z A-Z])\w+[^!]/g;
+    function validate(input) {
+      return regEx.test(input);
+    }
+    let isValidIdentifier = 'myVar!';
+    // let isValidIdentifier = document.getElementById('variable').value;
+    let validateCheck = validate(isValidIdentifier);
+    console.log( `this is ${validateCheck}`);
+
+//7. Write a function that accepts a string as an input, capitalizes the first letters of each word and returns the capitalized string. Use a regular expression to achieve the desired result.
+console.log('7. Write a function that accepts a string as an input, capitalizes the first letters of each word and returns the capitalized string. Use a regular expression to achieve the desired result.\n')
+    function capitalize(testStr){
+      return testStr.replace(/(^\w{1})|(\s{1}\w{1})/g,  testStr => testStr.toUpperCase());
+    }
+    let resultStr = capitalize("my name is john smith. I am 27.");
+    console.log(`Result ${resultStr}`)
+
+
+
+
+  </script>
+</html>
