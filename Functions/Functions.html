@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--suppress JSUnusedAssignment -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Write a function - It should accept two arguments and returns true if first one value equals second one or false otherwise.
+    console.log('Write a function - It should accept two arguments and returns true if first one value equals second one or false otherwise.');
+
+    function isEquals(num1, num2) {
+        console.log(num1 === num2);
+    }
+
+    isEquals(18, "18");
+    isEquals(18, 18);
+
+    // Write a function - It should accept two arguments and returns true if first one has greater value than second one or false otherwise..
+    console.log('Write a function - It should accept two arguments and returns true if first one has greater value than second one or false otherwise.');
+
+    function isBigger(min, max) {
+        console.log(min < max);
+    }
+    isBigger(20, 89);
+    isBigger(89, 20);
+
+    //Write a function - It should accept an arbitrary number of strings and return an array of that strings
+    console.log('Write a function - It should accept an arbitrary number of strings and return an array of that strings');
+
+    function storeNames() {
+        console.log(Array.from(arguments));
+    }
+
+    storeNames('inter top', 'gem', 'adidas', 'answear', 'gepur', 'timeofstyle');
+
+    //Write a function - It should accept two arguments as numbers and return their difference. But the function never returns a negative value. If second parameter is greater than first one, function will change their order.
+    console.log('Write a function - It should accept two arguments as numbers and return their difference. But the function never returns a negative value. If second parameter is greater than first one, function will change their order.');
+
+    function getDifference(a, b) {
+
+        if (a > b) {
+            return Math.abs(a - b);
+        } else {
+            return Math.abs(b - a);
+        }
+
+    }
+
+    let diff = getDifference(100, 180);
+    console.log(diff);
+
+    //Write a function - It should accept an array of numbers and return the count of negative values from the array.
+    console.log('Write a function - It should accept an array of numbers and return the count of negative/positive/zero values from the array.')
+
+    function negativeCount() {
+        let ar = [-1, -2, -3, 0, 0, 5, 12, 0, -10, -3, 5, -2, 0];
+        let zeroCount = 0,
+            posCount = 0,
+            negativeCount = 0;
+        ar.forEach((item) => {
+            if (item === 0) {
+                zeroCount++
+            } else if (item < 0) {
+                negativeCount++
+            } else if (item > 0) {
+                posCount++
+            }
+        })
+        console.log(negativeCount, posCount, zeroCount)
+    }
+    negativeCount()
+
+    //return only  negative values from the array
+    console.log('return only  negative values from the array')
+    let myArray = [4, -5, 0, 2, -67, 8, 10, -34, -3, 9, 5, -6, -12];
+
+    let result = myArray.filter(function (number) {
+        return number < 0;
+    });
+    console.log(result);
+
+    //Write a function – It accepts two string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+    //If no occurrences can be found, a count of 0 should be returned.
+    console.log('Write a function – It accepts two string arguments and returns an integer of the count of occurrences the 2nd argument is found in the first one.\n' + 'If no occurrences can be found, a count of 0 should be returned.')
+
+        // function  letterCount(name, surname){
+        //     let count = 0;
+        //     name.match(/[a]/) || surname.match(/[k]/);
+        //     console.log(count);
+        //     return count;
+        // }
+        // letterCount('lena', 'kononchuk')
+</script>
+
+</html>

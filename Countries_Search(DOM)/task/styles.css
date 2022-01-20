@@ -1,0 +1,59 @@
+.container{
+    width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+.form{
+    width:350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.form p{
+    line-height: 0.8;
+}
+.radioBox {
+    width: 137px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+select{
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+table{
+    width: 100%;
+    border-collapse: collapse; 
+    /* border-width: thin;
+    border: 1px solid black; */
+}
+.heading{
+    background-color: rgb(101, 175, 101);
+    padding:10px;
+    color: #fff;
+    border: 1px solid rgb(206, 206, 206);
+}
+.table tr td{
+    padding: 15px;
+    border: 1px solid rgb(206, 206, 206);
+    color: rgb(56, 56, 56);
+}
+
+img{
+    max-width: 100%;
+    width: 50px;
+    height: 30px;
+}
+.err{
+    text-align: center;
+    visibility: hidden;
+}
+
+
+
+
+
+
+

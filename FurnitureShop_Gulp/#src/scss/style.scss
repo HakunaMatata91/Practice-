@@ -1,0 +1,54 @@
+
+@import "mixins";
+@import "fonts";
+@import "icons";
+
+//ШРИФТЫ
+$fontFamily: "Gilroy";
+$fontSize: 16;
+
+// ПЕРЕМЕННЫЕ
+$maxWidth: 1920;
+$minWidth: 320;
+$maxWidth: 1440;
+$maxWidthContainer: 1270;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #3a3a3a;
+$orangeColor: #e89f71;
+$greyColor: #898989;
+$darkGreyColor: #616161;
+
+//ОБОЛОЧКА
+._wrapper{
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  &_loaded{
+  }
+}
+//ОСНОВНАЯ СЕТКА
+._container {
+  max-width: $maxWidthContainer + px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+//ОБЩИЕ ПАРАМЕТРЫ
+@import "null";
+body{
+  background-color: #f9f1e7;
+  color: $mainColor;
+  &._lock{
+    overflow: hidden;
+  }
+}
+
+@import "header";
+
+
+
