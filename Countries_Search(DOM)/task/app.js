@@ -54,7 +54,7 @@ radioItem1.type = "radio";
 radioItem1.name = "myRadios";
 radioItem1.id = "myRadios1";
 radioItem1.value = "regions";
-radioItem1.onclick = showElement;
+radioItem1.onclick = ()=>{showError(true);};;
 region.appendChild(radioItem1);
 
 //languages radio button
@@ -67,7 +67,7 @@ radioItem2.type = "radio";
 radioItem2.name = "myRadios";
 radioItem2.id = "myRadios2";
 radioItem2.value = "languages";
-radioItem2.onclick = showElement;
+radioItem2.onclick = ()=>{showError(true);};
 language.appendChild(radioItem2);
 
 // label for region radio button
@@ -105,7 +105,7 @@ selectItem.type = "text";
 selectItem.id = "select";
 selectItem.value = "";
 selectItem.onchange = onSelectChange;
-selectItem.onclick = hideElement;
+selectItem.onclick = ()=>{showError(false);};
 selectItem.name = "Select";
 selectBox.appendChild(selectItem);
 
@@ -124,13 +124,9 @@ err.textContent = "No items, please choose search query";
 containerElement.appendChild(err);
 
 // function for show and hede text "No items, please choose search query"
-function showElement() {
-    element = document.querySelector('.err');
-    element.style.visibility = 'visible';
-}
-function hideElement() {
-    element = document.querySelector('.err');
-    element.style.visibility = 'hidden';
+function showError(show) {
+    let element = document.querySelector('.err');
+    element.style.visibility = show?'visible':'hidden';
 }
 
 //function with RegionsList
