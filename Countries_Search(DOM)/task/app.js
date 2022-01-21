@@ -15,39 +15,29 @@ const formElement = document.createElement('div');
 formElement.className = "formElement";
 containerElement.appendChild(formElement);
 
+//create choose text for radio button and select
+const objLabel  = document.createElement('div');
+objLabel.className = "content_form";
+objLabel.innerHTML = "<p>Please choose the type of search:</p> <p>Please choose search query:</p>";
+formElement.appendChild(objLabel);
+
+
+//create form
 const form = document.createElement("form");
 form.className = "form";
 formElement.appendChild(form);
 
-////create objLabelBox
-const objLabelBox = document.createElement('div');
-objLabelBox.className = "objLabelBox";
-form.appendChild(objLabelBox);
-
-////create objLabelBox(p)
-const objLabel = document.createElement("p");
-objLabel.textContent = "Please choose the type of search:";
-objLabelBox.appendChild(objLabel);
-const objLabel2 = document.createElement("p");
-objLabel2.textContent = "Please choose search query:";
-objLabelBox.appendChild(objLabel2);
-
-////create buttonBox div with 2 Child div
-const buttonBox = document.createElement('div');
-buttonBox.className = "buttonBox";
-form.appendChild(buttonBox);
-
-////create radioBox div (languages/regions)
+//create radioBox div (languages/regions)
 const radioBox = document.createElement("div");
-radioBox.className = "radioBox";
-buttonBox.appendChild(radioBox);
+radioBox.className = "form-group";
+form.appendChild(radioBox);
 
 const defaultFilter = "";//"languages";//"regions";
 
-//regions radio button
-const region = document.createElement("div");
-region.className = "region";
-radioBox.appendChild(region);
+// create p element for input and label by regions
+const regionParent = document.createElement("p");
+regionParent.className = "region_parent_box";
+radioBox.appendChild(regionParent);
 
 const radioItem1 = document.createElement("input");
 radioItem1.type = "radio";
@@ -55,22 +45,8 @@ radioItem1.name = "myRadios";
 radioItem1.id = "myRadios1";
 radioItem1.value = "regions";
 radioItem1.onclick = ()=>{showError(true);};;
-region.appendChild(radioItem1);
+regionParent.appendChild(radioItem1);
 
-//languages radio button
-const language = document.createElement("div");
-language.className = "language";
-radioBox.appendChild(language);
-
-const radioItem2 = document.createElement("input");
-radioItem2.type = "radio";
-radioItem2.name = "myRadios";
-radioItem2.id = "myRadios2";
-radioItem2.value = "languages";
-radioItem2.onclick = ()=>{showError(true);};
-language.appendChild(radioItem2);
-
-// label for region radio button
 const objTextNode1 = document.createElement("label");
 objTextNode1.htmlFor = "myRadios1";
 objTextNode1.textContent = "By region";
@@ -78,9 +54,21 @@ objTextNode1.onclick = onRegionsClicked;
 if (defaultFilter === "region") {
     objTextNode1.defaultChecked = true;
 }
-radioItem1.appendChild(objTextNode1);
+regionParent.appendChild(objTextNode1);
 
-// label for language radio button
+// create p element for input and label by languages
+const languagesParent = document.createElement("p");
+languagesParent.className = "languages_parent_box";
+radioBox.appendChild(languagesParent);
+
+const radioItem2 = document.createElement("input");
+radioItem2.type = "radio";
+radioItem2.name = "myRadios";
+radioItem2.id = "myRadios2";
+radioItem2.value = "languages";
+radioItem2.onclick = ()=>{showError(true);};
+languagesParent.appendChild(radioItem2);
+
 const objTextNode2 = document.createElement("label");
 objTextNode2.htmlFor = "myRadios2";
 objTextNode2.id = "lebel1";
@@ -89,16 +77,18 @@ objTextNode2.onclick = onLanguagesClicked;
 if (defaultFilter === "languages") {
     objTextNode2.defaultChecked = true;
 }
-radioItem2.appendChild(objTextNode2);
+languagesParent.appendChild(objTextNode2);
 
 //input label
 radioItem1.after(objTextNode1)
 radioItem2.after(objTextNode2)
 
-////create selectBox form (option)
-const selectBox = document.createElement("form");
-selectBox.className = "form2";
-buttonBox.appendChild(selectBox);
+
+// create p element for input and label by languages
+const selectParent = document.createElement("p");
+selectParent.className = "select_parent_box";
+radioBox.appendChild(selectParent);
+
 
 const selectItem = document.createElement("select");
 selectItem.type = "text";
@@ -107,7 +97,7 @@ selectItem.value = "";
 selectItem.onchange = onSelectChange;
 selectItem.onclick = ()=>{showError(false);};
 selectItem.name = "Select";
-selectBox.appendChild(selectItem);
+selectParent.appendChild(selectItem);
 
 
 const selectOption = document.createElement("option");
@@ -229,7 +219,7 @@ function createTable(table, items) {
         let region = row.insertCell().innerHTML = item.region;
         let languages = row.insertCell().innerHTML = langString;
         let area = row.insertCell().innerHTML = item.area;
-        let img = row.insertCell().innerHTML = `<img  src=${item.flagURL} alt=" "/> `;
+        let img = row.insertCell().innerHTML = `<img  class="img" src=${item.flagURL} alt=" "/> `;
 
     })
 }
