@@ -31,3 +31,6 @@ if (isIE()){
 if(isMobile.any()){
     document.querySelector('html').classList.add('_touch');
 }
+
+//
+

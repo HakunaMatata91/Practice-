@@ -5,10 +5,9 @@
 
 //ШРИФТЫ
 $fontFamily: "Gilroy";
-$fontSize: 16;
+$fontSize: 16px;
 
 // ПЕРЕМЕННЫЕ
-$maxWidth: 1920;
 $minWidth: 320;
 $maxWidth: 1440;
 $maxWidthContainer: 1270;
@@ -23,20 +22,20 @@ $greyColor: #898989;
 $darkGreyColor: #616161;
 
 //ОБОЛОЧКА
-._wrapper{
+.wrapper{
   width: 100%;
   min-height: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  &_loaded{
-  }
+  // &._loaded{
+  // }
 }
 //ОСНОВНАЯ СЕТКА
 ._container {
-  max-width: $maxWidthContainer + px;
-  padding: 0 15px;
+  max-width: ($maxWidthContainer + px);
   margin: 0 auto;
+  padding: 0px 15px;
 }
 //ОБЩИЕ ПАРАМЕТРЫ
 @import "null";
@@ -49,6 +48,7 @@ body{
 }
 
 @import "header";
+
 
 
 
