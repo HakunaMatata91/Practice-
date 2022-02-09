@@ -5,7 +5,6 @@ body {
    font-size: 16px;
 }
 
-// header section
 .container {
    max-width: 1145px;
    margin: 0 auto;
@@ -24,6 +23,7 @@ body {
    overflow: hidden;
 }
 
+// header section
 .header {
    background: #F4F9E2;
 
@@ -62,6 +62,13 @@ body {
       color: #22356F;
    }
 
+   &__list a:hover {
+      color: #FAB63E;
+      transition: all 0.3s;
+      border-bottom: 1px solid black;
+      padding-bottom: 5px;
+   }
+
    &__list li:last-child {
       margin-right: 0px;
    }
@@ -72,7 +79,6 @@ body {
       z-index: 3;
    }
 
-   //  СДЕЛАТЬ hover и MODAL POPUP
    &__button a {
       padding: 20px 30px;
       background: #62D0DF;
@@ -85,9 +91,13 @@ body {
       font-weight: 700;
       text-transform: uppercase;
    }
+
+   &__button a:hover {
+      background-color: #FAB63E;
+      transition: all 0.4s ease-in;
+   }
 }
 
-// header section
 //main section
 .main {
 
@@ -177,6 +187,7 @@ body {
    }
 }
 
+//why section
 .why {
    background: url("../images/person_sec2.png")no-repeat center right, #62D0DF 70%;
 
@@ -205,6 +216,7 @@ body {
    }
 }
 
+//about section
 .about {
    position: relative;
 
@@ -238,6 +250,7 @@ body {
    }
 }
 
+//columns section
 .columns {
 
    &__row {
@@ -307,6 +320,7 @@ body {
    }
 }
 
+//select section
 .select {
 
    &__rows {
@@ -377,6 +391,7 @@ body {
 
 }
 
+//more section
 .more {
 
    &__row {
@@ -421,6 +436,7 @@ body {
    }
 }
 
+//help section
 .help {
    margin-top: 40px;
 
@@ -480,6 +496,7 @@ body {
    }
 }
 
+//ready section
 .ready {
 
    &__row {
@@ -541,6 +558,7 @@ body {
    }
 }
 
+//contacts section
 .contacts {
 
    &__row {
@@ -590,8 +608,7 @@ body {
    }
 }
 
-//main section
-
+//footer section
 .footer {
    background: #62D0DF;
 
@@ -609,6 +626,7 @@ body {
    }
 }
 
+//popup section
 .popup {
    position: fixed;
    width: 100%;
@@ -689,8 +707,7 @@ body {
 
 }
 
-
-
+//font-family section
 @font-face {
    font-family: 'Larsseit';
    src: url('../fonts/Larsseit-Bold.eot');

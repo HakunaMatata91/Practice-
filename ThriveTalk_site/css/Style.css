@@ -152,6 +152,14 @@ body {
   line-height: 16px;
   color: #22356F;
 }
+.header__list a:hover {
+  color: #FAB63E;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
 .header__list li:last-child {
   margin-right: 0px;
 }
@@ -173,6 +181,12 @@ body {
   font-family: "Larsseit";
   font-weight: 700;
   text-transform: uppercase;
+}
+.header__button a:hover {
+  background-color: #FAB63E;
+  -webkit-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .main {
