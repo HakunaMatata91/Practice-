@@ -703,6 +703,11 @@ body {
       width: 100%;
    }
 
+   &__btn:hover {
+      transition: all 0.3s ease;
+      background-color: #FAB63E;
+   }
+
    &__footer {}
 
 }

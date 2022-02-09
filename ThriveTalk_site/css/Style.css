@@ -764,6 +764,12 @@ body {
   border-radius: 5px;
   width: 100%;
 }
+.popup__btn:hover {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: #FAB63E;
+}
 @font-face {
   font-family: "Larsseit";
   src: url("../fonts/Larsseit-Bold.eot");
