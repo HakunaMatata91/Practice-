@@ -507,7 +507,7 @@ body {
    }
 
    &__body {
-      margin: 103px 200px 42px 180px;
+      margin: 103px 200px 35px 180px;
 
    }
 
@@ -666,8 +666,12 @@ body {
       right: 10px;
       top: 10px;
       font-size: 20px;
-      color: rgb(238, 82, 82);
+      color: #000;
+   }
 
+   &__close:hover {
+      color: rgb(238, 82, 82);
+      transition: all 0.3s ease 0s;
    }
 
    &__tiile {
@@ -696,8 +700,13 @@ body {
    }
 
    &__btn {
+      font-family: 'Larsseit';
+      font-weight: 700;
       background: #62D0DF;
-      font-size: 14px;
+      color: #ffff;
+      font-size: 16px;
+      line-height: 27px;
+      letter-spacing: 0.035em;
       padding: 10px;
       border-radius: 5px;
       width: 100%;

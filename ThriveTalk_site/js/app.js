@@ -13,9 +13,9 @@ span.onclick = function (e) {
    e.preventDefault();
 }
 
-window.onclick = function () {
-   if (e.target === modal) {
+window.onclick = function (event) {
+   if (event.target == modal) {
       modal.style.visibility = "hidden";
-      modal.style.opacity = "0"
+      // modal.style.opacity = "0"
    }
 }

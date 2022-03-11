@@ -577,7 +577,7 @@ body {
   background: #22356F;
 }
 .ready__body {
-  margin: 103px 200px 42px 180px;
+  margin: 103px 200px 35px 180px;
 }
 .ready__title {
   font-family: "Larsseit";
@@ -733,7 +733,13 @@ body {
   right: 10px;
   top: 10px;
   font-size: 20px;
+  color: #000;
+}
+.popup__close:hover {
   color: #ee5252;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 .popup__tiile {
   text-align: center;
@@ -758,8 +764,13 @@ body {
   margin-bottom: 10px;
 }
 .popup__btn {
+  font-family: "Larsseit";
+  font-weight: 700;
   background: #62D0DF;
-  font-size: 14px;
+  color: #ffff;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.035em;
   padding: 10px;
   border-radius: 5px;
   width: 100%;

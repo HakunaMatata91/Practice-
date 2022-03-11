@@ -1,0 +1,608 @@
+@import "null";
+@import "icons";
+
+
+@font-face {
+  font-family: 'Karla';
+  src: url('../fonts/Karla-Regular.eot');
+  src: local('☺'), url('../fonts/Karla-Regular.woff') format('woff'), url('../fonts/Karla-Regular.ttf') format('truetype'), url('../fonts/Karla-Regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('../fonts/Karla-Bold.eot');
+  src: local('☺'), url('../fonts/Karla-Bold.woff') format('woff'), url('../fonts/Karla-Bold.ttf') format('truetype'), url('../fonts/Karla-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Karla';
+  font-size: 16px;
+}
+
+.container {
+  max-width: 938px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+//header section
+.header {}
+
+.header__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.header__logo {
+  justify-content: center;
+  align-self: center;
+}
+
+.header__navigator ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.header__list li {
+  margin-right: 30px;
+}
+
+.header__list li:last-child {
+  margin-right: 56px;
+}
+
+.header__list a {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+}
+
+.header__list li a:hover {
+  color: #A25F4B;
+  border-bottom: 1px solid #A25F4B;
+  transition: 0.4s;
+}
+
+.cart-header__icon {
+  font-family: "Karla";
+  color: #1D1F2E;
+}
+
+.header__item {
+  margin-left: -100px;
+}
+
+.header__coll {
+  display: flex;
+  position: relative;
+}
+
+.cart-header__icon span {
+  position: absolute;
+  top: 0px;
+  left: 75px;
+}
+
+.header__spantext {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+  padding: 0px 10px 0px 10px;
+}
+
+.content {
+  background-color: #050827;
+  margin: 30px;
+}
+
+
+.main__row {
+  background-image: url("../images/header_img.png");
+}
+
+.main__title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 160px;
+}
+
+.main__subtitle {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 47px;
+  line-height: 60px;
+  text-align: center;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  padding-top: 30px;
+}
+
+.main__text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 30px;
+  text-align: center;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  padding-top: 30px;
+}
+
+.main__button {
+  text-align: center;
+  padding: 44px 0px 114px 0px;
+}
+
+//сделать before для button 
+.main__button button {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+  padding: 13px 27px;
+  letter-spacing: 3px;
+}
+
+.main__button button:hover {
+  background-color: #A25F4B;
+  color: #ffff;
+  transition: 0.4s;
+}
+
+//blog section
+.blog__container {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.blog__title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  color: #1D1F2E;
+  padding-top: 133px;
+  letter-spacing: 0.5px;
+}
+
+.blog__text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(29, 31, 46, 0.7);
+  padding-top: 35px;
+  letter-spacing: 0.5px;
+}
+
+.blog__button {
+  text-align: center;
+  padding-top: 35px;
+}
+
+.blog__btn {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 28px;
+  color: #A25F4B;
+  padding: 10px;
+  background-color: inherit;
+}
+
+.blog__btn:hover {
+  color: black;
+  transition: 0.5s;
+}
+
+.blog__separator {
+  margin: 0 auto;
+  width: 130px;
+  border-bottom: 2px solid rgba(162, 95, 75, 0.2);
+}
+
+.featured__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured__title {
+  padding: 100px 0px 100px 0px;
+}
+
+.featured__parent-img {
+  margin-bottom: 5px;
+}
+
+.featured__parent-img:hover {
+  border: 0.5px solid gray;
+}
+
+.title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+  letter-spacing: 2px;
+}
+
+.price {
+  text-align: center;
+}
+
+.text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #1D1F2E;
+  padding-top: 35px;
+}
+
+
+.products__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.old {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  // text-decoration-line: line-through;
+  color: rgba(29, 31, 46, 0.4);
+  padding-bottom: 20px;
+}
+
+.new {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 32px;
+  color: #A25F4B;
+  padding-right: 13px;
+  padding-bottom: 20px;
+}
+
+.products__title {
+  padding: 113px 0px 100px 0px;
+}
+
+.products__price {
+  padding-bottom: 65px;
+}
+
+.offers__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offers__main {
+  margin-top: -95px;
+}
+
+.offers__title {
+  padding: 95px 0px 105px 0px;
+}
+
+.offers__images {
+  padding-right: 20px;
+}
+
+.offers__imgcoffe img:first-child {
+  padding-bottom: 20px;
+}
+
+.offers__subtitle {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 50px;
+  color: #1D1F2E;
+  letter-spacing: 2px;
+  margin-top: -85px;
+}
+
+.offers__text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(29, 31, 46, 0.7);
+  padding-top: 5px;
+  letter-spacing: 1px;
+}
+
+.offers__btn {
+  padding: 30px 0px 10px 0px;
+}
+
+.button {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #1D1F2E;
+  padding: 15px 24px;
+}
+
+.button:hover {
+  border: 1px solid #1D1F2E;
+  background-color: #fff;
+  color: #A25F4B;
+  font-weight: bold;
+}
+
+.background {
+  padding: 130px 0px 100px 0px;
+}
+
+.livestyle__title {
+  padding-bottom: 105px;
+}
+
+.lifestyle__row {
+  display: flex;
+}
+
+.lifestyle__block {
+  margin-right: 18px;
+}
+
+.lifestyle__info {}
+
+.lifestyle__subtitle {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+  color: #1D1F2E;
+  padding: 35px 0px 25px 0px;
+  letter-spacing: 0.5px;
+}
+
+.lifestyle__text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(29, 31, 46, 0.7);
+  padding-bottom: 25px;
+}
+
+.lifestyle__date {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+  padding-bottom: 100px;
+}
+
+.updates {
+  background-color: #050827;
+  margin: 30px;
+}
+
+.updates__main {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  padding-top: 83px;
+}
+
+.updates__subtitle {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding-bottom: 33px;
+  letter-spacing: 2px;
+}
+
+.updates__title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  padding-bottom: 35px;
+}
+
+.updates__input {
+  padding: 20px;
+  min-width: 350px;
+  background-color: initial;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFF;
+  border: 1px solid #2F303E;
+}
+
+.updates__form {
+  padding: 0px 0px 85px 0px;
+}
+
+.updates__btn {
+  padding: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(29, 31, 46, 0.1);
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.updates__btn:hover {
+  background-color: #A25F4B;
+  color: #ffff;
+  transition: 0.4s;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 105px 0px 52px 0px;
+}
+
+.footer__logo {}
+
+.footer__logotext {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(29, 31, 46, 0.7);
+  padding: 35px 0px 90px 0px;
+  letter-spacing: 0.5px;
+  width: 280px;
+}
+
+.footer__artical {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(29, 31, 46, 0.3);
+}
+
+.footer__menu {}
+
+.footer__title {
+  font-family: Karla;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1D1F2E;
+  padding-bottom: 32px;
+}
+
+.footer__list li {
+  padding-bottom: 6px;
+}
+
+.footer__list a {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 22px;
+  color: rgba(29, 31, 46, 0.7);
+}
+
+.footer__text {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(29, 31, 46, 0.7);
+  padding-bottom: 36px;
+}
+
+.footer__follow {}
+
+.footer__contact p a {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  color: #1D1F2E;
+  letter-spacing: 1.5px;
+}
+
+.footer__bottomtext {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(29, 31, 46, 0.3);
+  padding-top: 48px;
+}
