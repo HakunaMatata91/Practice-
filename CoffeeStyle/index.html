@@ -26,11 +26,12 @@
                             </ul>
                         </div>
                         <div class="header__item cart-header">
-                            <div class="header__coll">
-                                <a href="" class="cart-header__icon _icon-cart"><span>3</span></a>
-                                <div class="header__spantext">card</div>
-                                <ul class="cart-header__list cart-list">
-                                </ul>
+                            <div class="header__coll" id="cardpopup">
+                                <a href="" class="cart-header__icon _icon-cart"></a>
+                                <div class="header__cartcount">0</div>
+                                <button id="buttontext" class="header__spantext">card</button>
+                                <!-- <ul class="cart-header__list cart-list">
+                                </ul> -->
                             </div>
                         </div>
                     </div>
@@ -86,19 +87,6 @@
                 <div class="container">
                     <div class="featured__title title">Featured Mugs</div>
                     <div class="featured__row">
-                        <!--                        <div class="featured__images price">-->
-                        <!--                            <div class="featured__parent-img"> <img src="images/coffeFlowers1.png" alt="coffeFlowers">-->
-                        <!--                            </div>-->
-                        <!--                            <div class="featured__text text">Pink Premium Ceramic</div>-->
-                        <!--                            <span class="featured__old old">$ 99.00</span>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="featured__images price">-->
-                        <!--                            <div class="featured__parent-img"> <img class="coffe" src="images/GoldenDes2.png"-->
-                        <!--                                    alt="coffeFlowers"></div>-->
-                        <!--                            <div class="featured__text text">Golden Designers Mug</div>-->
-                        <!--                            <span class="featured__new new">$50.00</span>-->
-                        <!--                            <del><span class="featured__old old">$69.00</span></del>-->
-                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -106,71 +94,6 @@
                 <div class="container">
                     <div class="products__title title">More Products</div>
                     <div class="products__row">
-                        <!-- <div class="products__item price">
-                            <img src="images/redDes3.png" alt="coffe red">
-                            <div class="products__text text">Red Love Cup</div>
-                            <div class="products__price">
-                                <span class="products__new new">$25.00</span>
-                                <del> <span class="products__old old">$37.00</span></del>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/blackDes4.png" alt="coffe red">
-                            <div class="products__text text">Black Tea Cup</div>
-                            <div class="products__price">
-                                <span class="products__new new ">$15.00</span>
-                                <del> <span class="products__old old">$29.00</span></del>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/B&WDes5.png" alt="coffe red">
-                            <div class="products__text text">B&W Essentials Mug</div>
-                            <div class="products__price">
-                                <span class="products__new old">$19.00</span>
-                            </div>
-                        </div> -->
-                        <!-- <div class="products__item price">
-                            <img src="images/Winter.png" alt="coffe red">
-                            <div class="products__text text">Winter Style Mug</div>
-                            <div class="products__price">
-                                <span class="products__new old">$25.00</span>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/Ceramic.png" alt="coffe red">
-                            <div class="products__text text">Ceramic Tea</div>
-                            <div class="products__price">
-                                <span class="products__new old">$46.00</span>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/Handle.png" alt="coffe red">
-                            <div class="products__text text">No Handle Bar Cup</div>
-                            <div class="products__price">
-                                <span class="products__new old">$34.00</span>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/EspressoDes6.png" alt="coffe red">
-                            <div class="products__text text">Espresso Cup by Mugs.co</div>
-                            <div class="products__price">
-                                <span class="products__new old">$25.00</span>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/pinkDes7.png" alt="coffe red">
-                            <div class="products__text text">Pink Premium Ceramic</div>
-                            <div class="products__price">
-                                <span class="products__new old">$99.00</span>
-                            </div>
-                        </div>
-                        <div class="products__item price">
-                            <img src="images/summerDes8.png" alt="coffe red">
-                            <div class="products__text text">Summer Designer Cup</div>
-                            <div class="products__price">
-                                <span class="products__new old">$29.00</span>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -292,7 +215,30 @@
             </div>
         </div>
     </div>
+    <div class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <div class="popup__header">
+                    <div class="popup__title">Your order</div>
+                    <div class="popup__closed"> <a href="">X</a></div>
+                </div>
+                <div id="tableRow" class="popup__main">
+                    <div class="popup__head">
+                        <div class="popup__product">Product</div>
+                        <div class="popup__count">Count</div>
+                        <div class="popup__sum">Sum</div>
+                    </div>
+                </div>
+                <div class="popup__order">
+                    <button type="button" class="popup__back" id="button-back">continue shopping </button>
+                    <button type="button" class="popup__button " id="button-send">place an order</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="js/app.js"></script>
+
 </body>
 
 </html>

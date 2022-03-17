@@ -1,7 +1,6 @@
 @import "null";
 @import "icons";
 
-
 @font-face {
   font-family: 'Karla';
   src: url('../fonts/Karla-Regular.eot');
@@ -100,7 +99,14 @@ body {
   position: relative;
 }
 
-.cart-header__icon span {
+.header__coll:hover {
+  border-bottom: 1px solid #A25F4B;
+  transition: 0.4s;
+  color: #A25F4B;
+  cursor: pointer;
+}
+
+.header__cartcount {
   position: absolute;
   top: 0px;
   left: 75px;
@@ -116,6 +122,7 @@ body {
   text-transform: uppercase;
   color: #1D1F2E;
   padding: 0px 10px 0px 10px;
+  background-color: inherit;
 }
 
 .content {
@@ -257,43 +264,146 @@ body {
   padding: 100px 0px 100px 0px;
 }
 
-#product__images {
-  width: 316px;
-  height: 497px;
-}
-
-.oldPrice {
-  text-decoration: line-through;
-}
-
-.nameTitle {
-  font-size: 40px;
-}
-
-#product__images img {
-  width: 100%;
-  height: 380px;
-  margin-top: 0;
-}
-
 #featured__images {
-  width: 460px;
-  height: 640px;
+  position: relative;
+}
+
+//opacity box
+#featured__images .hiddenContainer {
+  cursor: pointer;
+  position: absolute;
+  z-index: 22;
+  top: 85px;
+  left: 0px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  margin-top: 236px;
+  transform: translateY(220px);
+  opacity: 0;
+}
+
+#featured__images .hiddenContainer:hover {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s;
+}
+
+//opacity box button
+.hiddenContainer .buyItemBtn {
+  width: 100%;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: underline;
+  padding: 10px;
+  color: rgb(95, 160, 95);
+}
+
+.hiddenContainer .buyItemBtn:hover {
+  background-color: rgb(95, 160, 95);
+  color: #000;
+  text-decoration: none;
+}
+
+.descriptionlabel {
+  white-space: pre-wrap;
+  padding: 10px;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.namePrice {
+  padding-right: 12px;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 32px;
+  text-align: center;
+  color: #A25F4B;
+}
+
+.paretPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
 }
 
 #featured__images img {
   width: 100%;
-  height: 540px;
   margin-top: 0;
+  margin-bottom: 43px;
+}
+
+.nameTitle {
+  margin-bottom: 10px;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #1D1F2E;
 }
 
 .featured__parent-img {
   margin-bottom: 5px;
 }
 
-.featured__parent-img:hover {
-  border: 0.5px solid gray;
+.curentPrice {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(29, 31, 46, 0.7);
+
 }
+
+.oldPrice {
+  text-decoration: line-through;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+  color: rgba(29, 31, 46, 0.4);
+}
+
+#product__images img {
+  margin-bottom: 40px;
+}
+
+#product__images {
+  position: relative;
+}
+
+#product__images .hiddenContainer {
+  cursor: pointer;
+  position: absolute;
+  z-index: 22;
+  top: 85px;
+  left: 0px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  margin-top: 76px;
+  opacity: 0;
+
+}
+
+#product__images .hiddenContainer:hover {
+  opacity: 1;
+  transition: all 0.8s ease-in-out;
+}
+
 
 .title {
   font-family: "Karla";
@@ -306,10 +416,6 @@ body {
   text-transform: uppercase;
   color: #1D1F2E;
   letter-spacing: 2px;
-}
-
-.price {
-  text-align: center;
 }
 
 .text {
@@ -326,36 +432,12 @@ body {
 .products__row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
+  justify-content: space-between;
 
-.old {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 28px;
-  color: rgba(29, 31, 46, 0.4);
-  padding-bottom: 20px;
-}
-
-.new {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 19px;
-  line-height: 32px;
-  color: #A25F4B;
-  padding-right: 13px;
-  padding-bottom: 20px;
 }
 
 .products__title {
-  padding: 113px 0px 100px 0px;
-}
-
-.products__price {
-  padding-bottom: 65px;
+  padding: 133px 0px 100px 0px;
 }
 
 .offers__row {
@@ -420,10 +502,8 @@ body {
 }
 
 .button:hover {
-  border: 1px solid #1D1F2E;
-  background-color: #fff;
-  color: #A25F4B;
-  font-weight: bold;
+  background-color: #A25F4B;
+  transition: 0.4s;
 }
 
 .background {
@@ -635,4 +715,194 @@ body {
   line-height: 22px;
   color: rgba(29, 31, 46, 0.3);
   padding-top: 48px;
+}
+
+//opacity box
+
+//POPUP MODAL
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 25;
+  // opacity: 0;
+  // visibility: hidden;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  display: none;
+  transition: all 0.8s ease 0s;
+}
+
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.popup__content {
+  color: #000;
+  max-width: 700px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  background-color: #eaeced;
+  width: 600px;
+}
+
+.popup__title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  color: #1D1F2E;
+  letter-spacing: 0.5px;
+  padding: 10px 0px 10px 0px;
+}
+
+.popup__closed a {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 15px;
+  color: #000;
+}
+
+.popup__closed a:hover {
+  color: rgb(235, 91, 91);
+}
+
+.popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup__title {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  color: #1D1F2E;
+  letter-spacing: 0.5px;
+}
+
+.popup__order {
+  padding: 20px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup__button {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1D1F2E;
+  background-color: inherit;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1D1F2E;
+}
+
+.popup__button:hover {
+  color: #19ab4a;
+  transition: 0.4s;
+  border-bottom: 1px solid#A25F4B;
+}
+
+.popup__back {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1D1F2E;
+  text-transform: uppercase;
+  border-bottom: 1px solid #1D1F2E;
+}
+
+.popup__back:hover {
+  color: #A25F4B;
+  transition: 0.4s;
+  border-bottom: 1px solid #19ab4a;
+}
+
+.popup__clear {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1D1F2E;
+  border-bottom: 1px solid #1D1F2E;
+}
+
+.imgrow {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5px;
+}
+
+.popup__main {
+  position: relative;
+}
+
+.myTable {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.popup__head {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+}
+
+.popup__sum {
+  padding-left: 75px;
+}
+
+.popup__count {
+  padding-left: 292px;
+}
+
+.myTable tbody td:nth-child(2) {
+  width: 45%;
+  padding-left: 5px;
+}
+
+.myTable tbody td:nth-child(3) {
+  width: 5%;
+  color: red;
+}
+
+.myTable tbody td:nth-child(4) {
+  width: 5%;
+}
+
+.myTable tbody td:nth-child(5) {
+  width: 5%;
+  padding-right: 50px;
+  color: green;
+}
+
+.myTable tbody td:last-child {
+  width: 15%;
+}
+
+.popup__fullprice {
+  padding: 20px 0px 20px 11px;
+  text-align: right;
 }

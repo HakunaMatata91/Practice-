@@ -18,7 +18,7 @@ const db = [
       id: 0,
       img: "images/coffeFlowers1.png",
       name: "Pink Premium Ceramic",
-      description: "",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
       price: "$ 99.00",
       oldPrice: "",
       featured: false
@@ -27,35 +27,35 @@ const db = [
       id: 1,
       img: "images/GoldenDes2.png",
       name: "Golden Designers Mug",
-      description: "",
-      price: "$50.00",
-      oldPrice: "$69.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 50.00",
+      oldPrice: "$ 69.00",
       featured: false
    },
    {
       id: 2,
       img: "images/redDes3.png",
       name: "Red Love Cup",
-      description: "",
-      price: "$25.00",
-      oldPrice: "$37.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 25.00",
+      oldPrice: "$ 37.00",
       featured: false
    },
    {
       id: 3,
       img: "images/blackDes4.png",
       name: "Black Tea Cup",
-      description: "",
-      price: "$15.00",
-      oldPrice: "$29.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 15.00",
+      oldPrice: "$ 29.00",
       featured: false
    },
    {
       id: 4,
       img: "images/B&WDes5.png",
       name: "B&W Essentials Mug",
-      description: "",
-      price: "$19.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 19.00",
       oldPrice: "",
       featured: false
    },
@@ -63,8 +63,8 @@ const db = [
       id: 5,
       img: "images/Winter.png",
       name: "Winter Style Mug",
-      description: "",
-      price: "$25.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 25.00",
       oldPrice: "",
       featured: false
    },
@@ -72,8 +72,8 @@ const db = [
       id: 6,
       img: "images/Ceramic.png",
       name: "Ceramic Tea",
-      description: "",
-      price: "$46.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 46.00",
       oldPrice: "",
       featured: false
    },
@@ -81,8 +81,8 @@ const db = [
       id: 7,
       img: "images/Handle.png",
       name: "No Handle Bar Cup",
-      description: "",
-      price: "$34.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 34.00",
       oldPrice: "",
       featured: false
    },
@@ -90,8 +90,8 @@ const db = [
       id: 8,
       img: "images/EspressoDes6.png",
       name: "Espresso Cup by Mugs.co",
-      description: "",
-      price: "$25.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 25.00",
       oldPrice: "",
       featured: false
    },
@@ -99,8 +99,8 @@ const db = [
       id: 9,
       img: "images/pinkDes7.png",
       name: "Pink Premium Ceramic",
-      description: "",
-      price: "$99.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 99.00",
       oldPrice: "",
       featured: false
    },
@@ -108,13 +108,15 @@ const db = [
       id: 10,
       img: "images/summerDes8.png",
       name: "Summer Designer Cup",
-      description: "",
-      price: "$29.00",
+      description: "Состав:,  Молоко,  Взбитые сливки,  Амаретто,  Тростниковый сахар,  Перец Чили,  Ваниль,  Темный шоколад",
+      price: "$ 29.00",
       oldPrice: "",
       featured: false
    }
 
 ]
+
+let cart = [0, 1];
 
 function createCupElement(itemData, isFeatured) {
    let item = document.createElement("div");
@@ -139,22 +141,58 @@ function createCupElement(itemData, isFeatured) {
    nameTitle.innerHTML = itemData.name;
    item.appendChild(nameTitle);
 
-   let namePrice = document.createElement('div');
-   namePrice.className = "namePrice";
-   namePrice.innerHTML = itemData.price;
-   item.appendChild(namePrice);
+   let paretPrice = document.createElement('div');
+   paretPrice.className = "paretPrice";
+
+   // paretPrice.innerHTML = itemData.price;
+   item.appendChild(paretPrice);
+
+   let currentPrice = document.createElement('div');
+   currentPrice.className = "curentPrice";
+   currentPrice.innerHTML = itemData.price;
+   paretPrice.appendChild(currentPrice);
+
+   let hiddenContainer = document.createElement('div');
+   hiddenContainer.className = "hiddenContainer";
+   item.appendChild(hiddenContainer);
+
+   //create opacity content-cart
+   let descriptionlabel = document.createElement('div');
+   descriptionlabel.className = "descriptionlabel";
+   descriptionlabel.innerHTML = itemData.description.split(",").join("\n");;
+   hiddenContainer.appendChild(descriptionlabel);
+
+
+   let button = document.createElement('button');
+   button.className = "buyItemBtn";
+   button.innerHTML = "Add to cart";
+   button.onclick = () => {
+      console.log(`item clicked: ${itemData.name}`);
+      cart.push(itemData.id);
+      updateCard();
+   };
+   hiddenContainer.appendChild(button);
+
    //only one price
    if (itemData.oldPrice != "" && itemData.oldPrice != null) {
       let namePrice = document.createElement('div');
       namePrice.className = "oldPrice";
       namePrice.innerHTML = itemData.oldPrice;
-      namePrice.id = ""
-      item.appendChild(namePrice);
+      paretPrice.appendChild(namePrice);
+      currentPrice.className = "namePrice";
    }
+   //
 
 
-   console.log(`item created for ${itemData.name} = ${item.innerHTML}`);
+
+
+   // console.log(`item created for ${itemData.name} = ${item.innerHTML}`);
    return item;
+}
+
+function updateCard() {
+   let count = document.querySelector('.header__cartcount');
+   count.innerHTML = cart.length;
 }
 
 let f1 = createCupElement(db[0], true);
@@ -169,9 +207,90 @@ for (let i = 2; i < db.length; i++) {
    let item = createCupElement(element, false);
    container2.appendChild(item);
 }
-// let f3 = createCupElement(db[2]);
-// let f4 = createCupElement(db[3]);
-// let container2 = document.querySelector(".products__row");
-// container2.appendChild(f3);
-// container2.appendChild(f4);
-// container2.appendChild(f5);
+//table 
+const popup = document.querySelector('.popup')
+const tbl = document.getElementById('tableRow');
+let cardRow = document.getElementById('buttontext');
+cardRow.onclick = () => {
+   createTable();
+   popup.style.display = "block";
+}
+
+function createTable() {
+
+   const tableForPopup = document.createElement("table");
+   tableForPopup.className = "myTable";
+   tableForPopup.id = "table";
+   tbl.appendChild(tableForPopup);
+
+
+   const fullPrice = document.createElement('th');
+   fullPrice.className = "popup__fullprice";
+   fullPrice.innerHTML = "Total";
+   tbl.appendChild(fullPrice);
+
+
+   console.log(`cart has ${cart.length} items`);
+   cart.forEach(id => {
+      let itemData = db.find((el) => id === el.id);
+      shotCartItem(itemData, tableForPopup);
+   });
+}
+
+
+
+function shotCartItem(itemData, tableElement) {
+   let row = tableElement.insertRow();
+
+   let imgCell = row.insertCell();
+   // imgCell.tagName = "img";
+   imgCell.innerHTML = `<img  class="imgrow" src=${itemData.img} alt=""/> `;
+   let nameCell = row.insertCell();
+   nameCell.innerHTML = itemData.name;
+
+   let minusCard = row.insertCell();
+   minusCard.innerHTML = "-";
+
+   let getCount = row.insertCell();
+   getCount.innerHTML = "0";
+
+   let plusCard = row.insertCell();
+   plusCard.innerHTML = "+";
+
+
+   let getSumma = row.insertCell();
+   getSumma.innerHTML = itemData.price;
+
+}
+
+
+//full price
+//plus new cart 
+//minus new cart 
+//delete cart
+
+
+
+
+//
+// const priceWithoutSpaces = (str) => {
+//    return str.replace(/\s/g, '');
+// };
+// const normalPrice = (str) => {
+//    return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '')
+// };
+
+// let price = 0;
+// const plusFullPrice = (currentPrice) => {
+//    return price += currentPrice;
+// }
+// const minusFullPrice = (currentPrice) => {
+//    return price -= currentPrice;
+// }
+
+// let fullPrice = document.querySelector('.popup__price')
+// const printFullPrice () => {
+//    fullPrice.textContent = `${}  $`;
+// }
+
+// 
