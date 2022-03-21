@@ -1,3 +1,4 @@
+//IMPORT NULL STYLE/ICONS/FONT
 @import "null";
 @import "icons";
 
@@ -22,11 +23,13 @@ body {
   font-size: 16px;
 }
 
+//CONTAINER STYLE 
 .container {
   max-width: 938px;
   margin: 0 auto;
 }
 
+//WRAPPER STYLE 
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -38,9 +41,7 @@ body {
   overflow: hidden;
 }
 
-//header section
-.header {}
-
+//HEADER SECTION STYLE
 .header__row {
   display: flex;
   justify-content: space-between;
@@ -125,60 +126,50 @@ body {
   background-color: inherit;
 }
 
+//HEADER SECTION STYLE
+//CONTENT SECTION STYLE
 .content {
   background-color: #050827;
   margin: 30px;
 }
 
-
-.main__row {
+.content__row {
   background-image: url("../images/header_img.png");
-}
-
-.main__title {
   font-family: "Karla";
   font-style: normal;
   font-weight: normal;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.content__title {
   font-size: 12px;
   line-height: 18px;
-  text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #FFFFFF;
   padding-top: 160px;
 }
 
-.main__subtitle {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
+.content__subtitle {
   font-size: 47px;
   line-height: 60px;
-  text-align: center;
-  color: #FFFFFF;
   letter-spacing: 3px;
   padding-top: 30px;
 }
 
-.main__text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
+.content__text {
   font-size: 17px;
   line-height: 30px;
-  text-align: center;
-  color: #FFFFFF;
   letter-spacing: 1px;
   padding-top: 30px;
 }
 
-.main__button {
+.content__button {
   text-align: center;
   padding: 44px 0px 114px 0px;
 }
 
-//сделать before для button 
-.main__button button {
+.content__button button {
   font-family: "Karla";
   font-style: normal;
   font-weight: bold;
@@ -191,51 +182,44 @@ body {
   letter-spacing: 3px;
 }
 
-.main__button button:hover {
+.content__button button:hover {
   background-color: #A25F4B;
   color: #ffff;
   transition: 0.4s;
 }
 
-//blog section
+//CONTENT SECTION STYLE
+//BLOG SECTION STYLE
 .blog__container {
   max-width: 620px;
   margin: 0 auto;
-}
-
-.blog__title {
   font-family: "Karla";
   font-style: normal;
   font-weight: normal;
+  text-align: center;
+}
+
+.blog__title {
   font-size: 28px;
   line-height: 40px;
-  text-align: center;
   color: #1D1F2E;
   padding-top: 133px;
   letter-spacing: 0.5px;
 }
 
 .blog__text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 28px;
-  text-align: center;
   color: rgba(29, 31, 46, 0.7);
   padding-top: 35px;
   letter-spacing: 0.5px;
 }
 
 .blog__button {
-  text-align: center;
   padding-top: 35px;
 }
 
 .blog__btn {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 15px;
   line-height: 28px;
   color: #A25F4B;
@@ -254,6 +238,8 @@ body {
   border-bottom: 2px solid rgba(162, 95, 75, 0.2);
 }
 
+//BLOG SECTION STYLE
+//FEATURED SECTION STYLE
 .featured__row {
   display: flex;
   justify-content: space-between;
@@ -268,36 +254,19 @@ body {
   position: relative;
 }
 
-//opacity box
 #featured__images .hiddenContainer {
+  margin-top: 238px;
   cursor: pointer;
-  position: absolute;
-  z-index: 22;
-  top: 85px;
-  left: 0px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  margin-top: 236px;
-  transform: translateY(220px);
-  opacity: 0;
 }
 
-#featured__images .hiddenContainer:hover {
-  opacity: 1;
-  transform: translateY(0px);
-  transition: all 1s;
-}
-
-//opacity box button
-.hiddenContainer .buyItemBtn {
+.buyItemBtn {
   width: 100%;
-  font-family: "Karla";
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   text-decoration: underline;
   padding: 10px;
   color: rgb(95, 160, 95);
+  pointer-events: all;
 }
 
 .hiddenContainer .buyItemBtn:hover {
@@ -315,13 +284,11 @@ body {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.5px;
+  pointer-events: none;
 }
 
 .namePrice {
   padding-right: 12px;
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 19px;
   line-height: 32px;
   text-align: center;
@@ -343,9 +310,6 @@ body {
 
 .nameTitle {
   margin-bottom: 10px;
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 30px;
   text-align: center;
@@ -357,9 +321,6 @@ body {
 }
 
 .curentPrice {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 28px;
   text-align: center;
@@ -378,6 +339,9 @@ body {
   color: rgba(29, 31, 46, 0.4);
 }
 
+//FEATURED SECTION STYLE
+
+//PRODUCT SECTION STYLE
 #product__images img {
   margin-bottom: 40px;
 }
@@ -387,6 +351,10 @@ body {
 }
 
 #product__images .hiddenContainer {
+  margin-top: 78px;
+}
+
+.hiddenContainer {
   cursor: pointer;
   position: absolute;
   z-index: 22;
@@ -394,21 +362,11 @@ body {
   left: 0px;
   width: 100%;
   background: rgba(255, 255, 255, 0.6);
-  margin-top: 76px;
+  pointer-events: none;
   opacity: 0;
-
 }
-
-#product__images .hiddenContainer:hover {
-  opacity: 1;
-  transition: all 0.8s ease-in-out;
-}
-
 
 .title {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   text-align: center;
@@ -419,9 +377,6 @@ body {
 }
 
 .text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 30px;
   color: #1D1F2E;
@@ -440,9 +395,14 @@ body {
   padding: 133px 0px 100px 0px;
 }
 
+//PRODUCT SECTION STYLE
+//OFFERS SECTION STYLE
 .offers__row {
   display: flex;
   justify-content: space-between;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
 }
 
 .offers__main {
@@ -462,9 +422,6 @@ body {
 }
 
 .offers__subtitle {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 36px;
   line-height: 50px;
   color: #1D1F2E;
@@ -473,9 +430,6 @@ body {
 }
 
 .offers__text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 28px;
   color: rgba(29, 31, 46, 0.7);
@@ -488,9 +442,6 @@ body {
 }
 
 .button {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   text-align: center;
@@ -506,28 +457,28 @@ body {
   transition: 0.4s;
 }
 
+//OFFERS SECTION STYLE
 .background {
   padding: 130px 0px 100px 0px;
 }
 
+//LIVESTYLE SECTION STYLE
 .livestyle__title {
   padding-bottom: 105px;
 }
 
 .lifestyle__row {
   display: flex;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
 }
 
 .lifestyle__block {
   margin-right: 18px;
 }
 
-.lifestyle__info {}
-
 .lifestyle__subtitle {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 32px;
   color: #1D1F2E;
@@ -536,9 +487,6 @@ body {
 }
 
 .lifestyle__text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 16px;
   line-height: 28px;
   color: rgba(29, 31, 46, 0.7);
@@ -546,9 +494,6 @@ body {
 }
 
 .lifestyle__date {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 1px;
@@ -557,6 +502,8 @@ body {
   padding-bottom: 100px;
 }
 
+//LIVESTYLE SECTION STYLE
+//UPDATES SECTION STYLE
 .updates {
   background-color: #050827;
   margin: 30px;
@@ -567,12 +514,12 @@ body {
   letter-spacing: 2px;
   color: #FFFFFF;
   padding-top: 83px;
-}
-
-.updates__subtitle {
   font-family: "Karla";
   font-style: normal;
   font-weight: normal;
+}
+
+.updates__subtitle {
   font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
@@ -581,9 +528,6 @@ body {
 }
 
 .updates__title {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 36px;
   line-height: 50px;
   letter-spacing: 1px;
@@ -594,9 +538,6 @@ body {
   padding: 20px;
   min-width: 350px;
   background-color: initial;
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 2px;
@@ -613,9 +554,6 @@ body {
   padding: 20px;
   background: #FFFFFF;
   box-shadow: 0px 2px 6px rgba(29, 31, 46, 0.1);
-  font-family: Karla;
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 2px;
@@ -629,18 +567,18 @@ body {
   transition: 0.4s;
 }
 
+//UPDATES SECTION STYLE
+//FOOTER SECTION STYLE
 .footer__row {
   display: flex;
   justify-content: space-between;
   padding: 105px 0px 52px 0px;
-}
-
-.footer__logo {}
-
-.footer__logotext {
   font-family: "Karla";
   font-style: normal;
   font-weight: normal;
+}
+
+.footer__logotext {
   font-size: 14px;
   line-height: 22px;
   color: rgba(29, 31, 46, 0.7);
@@ -650,20 +588,12 @@ body {
 }
 
 .footer__artical {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: rgba(29, 31, 46, 0.3);
 }
 
-.footer__menu {}
-
 .footer__title {
-  font-family: Karla;
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 2px;
@@ -673,34 +603,28 @@ body {
 }
 
 .footer__list li {
-  padding-bottom: 6px;
+  padding-bottom: 7px;
 }
 
 .footer__list a {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 13px;
   line-height: 22px;
   color: rgba(29, 31, 46, 0.7);
 }
 
+.footer__list a:hover {
+  border-bottom: 1px solid #000;
+  color: #A25F4B;
+}
+
 .footer__text {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: rgba(29, 31, 46, 0.7);
   padding-bottom: 36px;
 }
 
-.footer__follow {}
-
 .footer__contact p a {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 36px;
   color: #1D1F2E;
@@ -708,18 +632,14 @@ body {
 }
 
 .footer__bottomtext {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 14px;
   line-height: 22px;
   color: rgba(29, 31, 46, 0.3);
   padding-top: 48px;
 }
 
-//opacity box
-
-//POPUP MODAL
+//FOOTER SECTION STYLE
+//POPUP MODAL SECTION STYLE
 .popup {
   position: fixed;
   width: 100%;
@@ -728,10 +648,6 @@ body {
   top: 0;
   left: 0;
   z-index: 25;
-  // opacity: 0;
-  // visibility: hidden;
-  // overflow-y: auto;
-  // overflow-x: hidden;
   display: none;
   transition: all 0.8s ease 0s;
 }
@@ -745,6 +661,9 @@ body {
 }
 
 .popup__content {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: normal;
   color: #000;
   max-width: 700px;
   border-radius: 5px;
@@ -757,9 +676,6 @@ body {
 }
 
 .popup__title {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 36px;
   color: #1D1F2E;
@@ -767,15 +683,16 @@ body {
   padding: 10px 0px 10px 0px;
 }
 
-.popup__closed a {
+.popup__closed {
   position: absolute;
   right: 20px;
   top: 20px;
   font-size: 15px;
   color: #000;
+  cursor: pointer;
 }
 
-.popup__closed a:hover {
+.popup__closed:hover {
   color: rgb(235, 91, 91);
 }
 
@@ -786,9 +703,6 @@ body {
 }
 
 .popup__title {
-  font-family: "Karla";
-  font-style: normal;
-  font-weight: normal;
   font-size: 20px;
   line-height: 36px;
   color: #1D1F2E;
@@ -803,8 +717,6 @@ body {
 }
 
 .popup__button {
-  font-family: "Karla";
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -817,12 +729,10 @@ body {
 .popup__button:hover {
   color: #19ab4a;
   transition: 0.4s;
-  border-bottom: 1px solid#A25F4B;
+  border-bottom: 1px solid #19ab4a;
 }
 
-.popup__back {
-  font-family: "Karla";
-  font-style: normal;
+.popup__delete {
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -831,15 +741,13 @@ body {
   border-bottom: 1px solid #1D1F2E;
 }
 
-.popup__back:hover {
-  color: #A25F4B;
+.popup__delete:hover {
+  color: #19ab4a;
   transition: 0.4s;
   border-bottom: 1px solid #19ab4a;
 }
 
 .popup__clear {
-  font-family: "Karla";
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -906,3 +814,5 @@ body {
   padding: 20px 0px 20px 11px;
   text-align: right;
 }
+
+//POPUP MODAL SECTION STYLE

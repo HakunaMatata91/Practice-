@@ -718,7 +718,7 @@ body {
 .popup__content {
   background-color: #fff;
   color: #000;
-  max-width: 800px;
+  min-width: 400px;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -727,6 +727,9 @@ body {
   -webkit-transition: all 0.8s ease 0s;
   -o-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
+}
+.popup__popup__form {
+  min-width: 100%;
 }
 .popup__close {
   position: absolute;
@@ -741,7 +744,7 @@ body {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.popup__tiile {
+.popup__title {
   text-align: center;
   font-family: "Larsseit";
   font-weight: 700;
