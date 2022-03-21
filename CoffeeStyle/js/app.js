@@ -122,7 +122,10 @@ const db = [
 
 let bucket = {}; //пустая корзина (ключ-значение)
 
-//create card block
+
+/*
+create card block
+*/
 function createCupElement(itemData, isFeatured) {
     let item = document.createElement("div");
     if (isFeatured) {
@@ -178,7 +181,7 @@ function createCupElement(itemData, isFeatured) {
     button.onclick = () => {
         console.log(`item clicked: ${itemData.name}`);
         addToBucket(itemData);
-        updateCard();
+        updateBucketLabel();
     };
     descriptionButton.appendChild(button);
 
@@ -199,25 +202,9 @@ function createCupElement(itemData, isFeatured) {
     return item;
 }
 
-function addToBucket(itemData) {
-    if (bucket[itemData.id] === undefined) {
-        bucket[itemData.id] = 1;
-    } else {
-        bucket[itemData.id] += 1;
-    }
-}
-
-function removeFromBucket(itemData) {
-    if (bucket.hasOwnProperty(itemData.id)) {
-        bucket[itemData.id] -= 1;
-
-        if (bucket[itemData.id] < 0) {
-            delete bucket[item.id];
-        }
-    }
-}
-
-//create opacity block for card
+/*
+create opacity block for coffee card
+*/
 function onItemOver(event) {
     let target = event.target.className;
     if (target === "itemImage") {
@@ -236,7 +223,9 @@ function onItemOver(event) {
         }
     }
 }
-//create opacity block for card
+/*
+create opacity block for coffee card
+*/
 function onItemOut(event) {
     console.log("try leave");
     let container = event.target.querySelector(".hiddenContainer");
@@ -256,9 +245,31 @@ function onItemOut(event) {
         console.log("container not found for " + parent.className);
     }
 }
-//create opacity block for card
 
-function updateCard() {
+
+function addToBucket(itemData) {
+    if (bucket[itemData.id] === undefined) {
+        bucket[itemData.id] = 1;
+    } else {
+        bucket[itemData.id] += 1;
+    }
+}
+
+function removeFromBucket(itemData) {
+    if (bucket.hasOwnProperty(itemData.id)) {
+        bucket[itemData.id] -= 1;
+
+        if (bucket[itemData.id] < 0) {
+            delete bucket[itemData.id];
+        }
+    }
+}
+
+
+/*
+ADDED NEW EL IN BUCKET
+*/
+function updateBucketLabel() {
     let count = document.querySelector('.header__cartcount');
     let value = 0;
     for (let key in bucket) {
@@ -268,6 +279,130 @@ function updateCard() {
     count.innerHTML = value;
 }
 
+/*
+CRETE LENE HEADING FOR BUCKET
+*/
+function showBucket() {
+
+    const tableForPopup = document.createElement("table");
+    tableForPopup.className = "myTable";
+    tableForPopup.id = "table";
+    tbl.appendChild(tableForPopup);
+
+
+    const fullPrice = document.createElement('th');
+    fullPrice.className = "popup__fullprice";
+    fullPrice.innerHTML = "Total";
+    tbl.appendChild(fullPrice);
+    let deleteBtn = document.getElementById("delete");
+    if (Object.keys(bucket).length > 0) {
+        for (let key in bucket) {
+            console.log(`[${key}] = ${bucket[key]}`);
+            let itemData = db.find((el) => key == el.id);
+            if (itemData === undefined) {
+                console.log("ERROR for key:" + key);
+            }
+            let itemCount = bucket[key];
+            createBucketItem(itemData, tableForPopup, itemCount);
+        }
+        deleteBtn.disabled = false;
+
+    } else {
+        clearCart();
+    }
+
+}
+/*
+CRETE BUCKET ROW(GET IMAGES/NAMES/PRICE FROM DB)
+*/
+function createBucketItem(itemData, tableElement, count) {
+    let row = tableElement.insertRow();
+
+    let imgCell = row.insertCell();
+    // imgCell.tagName = "img";
+    imgCell.innerHTML = `<img  class="imgrow" src=${itemData.img} alt=""/> `;
+    let nameCell = row.insertCell();
+    nameCell.innerHTML = itemData.name;
+
+    let minusCard = row.insertCell();
+    minusCard.innerHTML = "-";
+    minusCard.onclick = () => {
+        removeFromBucket(itemData);
+        repaintBucket();
+    }
+
+    let getCount = row.insertCell();
+    getCount.innerHTML = count;
+
+    let plusCard = row.insertCell();
+    plusCard.innerHTML = "+";
+    plusCard.onclick = () => {
+        addToBucket(itemData);
+        repaintBucket();
+    }
+
+
+    let getSumma = row.insertCell();
+    getSumma.innerHTML = updatePrice(itemData.price, count);
+}
+
+function updatePrice(price, adjust) {
+    let splitted = price.split(" ");
+    let priceNum = splitted[1] + 0;
+    priceNum *= adjust;
+
+    return splitted[0] + String(priceNum);
+}
+
+function repaintBucket() {
+    console.log("REPAINT BUCKET");
+    let parent = document.querySelector(".myTable").parentNode;
+    parent.removeChild(document.querySelector(".myTable"));
+    parent.removeChild(document.querySelector(".popup__fullprice"));
+    showBucket();
+}
+
+/*
+CRETE ELEMENT IF BUCKET === NULL
+*/
+function clearCart() {
+    bucket = {};
+    let tableForPopup = document.querySelector("table");
+    if (tableForPopup != null) {
+        tableForPopup.innerHTML = "";
+        let total = document.querySelector(".popup__fullprice");
+        total.innerHTML = " ";
+        let popapHead = document.querySelector(".popup__head");
+        popapHead.innerHTML = " ";
+
+        tableForPopup.innerHTML = "Your shopping basket is empty.";
+        tableForPopup.style.color = "red";
+    }
+    let deleteBtn = document.getElementById("delete");
+
+    deleteBtn.disabled = true;
+    deleteBtn.style.color = "grey";
+    deleteBtn.style.border = "none";
+}
+
+/*
+CLOSED CARDS 
+*/
+let closeButton = document.querySelector(".popup__closed");
+closeButton.onclick = () => onClose();
+
+
+function onClose() {
+    console.log("TRY CLOSE ");
+    popup.style.display = "none";
+    let parent = document.querySelector(".myTable").parentNode;
+    parent.removeChild(document.querySelector(".myTable"));
+    parent.removeChild(document.querySelector(".popup__fullprice"));
+}
+
+/*
+MAIN SCRIPTS
+*/
 let f1 = createCupElement(db[0], true);
 let f2 = createCupElement(db[1], true);
 let container = document.querySelector(".featured__row");
@@ -289,127 +424,13 @@ const tbl = document.getElementById('tableRow');
 let cardRow = document.getElementById('buttontext');
 
 cardRow.onclick = () => {
-    fillCart();
+    showBucket();
     popup.style.display = "block";
 }
 
-//Get img/name/price for header
-function fillCart() {
-
-    const tableForPopup = document.createElement("table");
-    tableForPopup.className = "myTable";
-    tableForPopup.id = "table";
-    tbl.appendChild(tableForPopup);
-
-
-    const fullPrice = document.createElement('th');
-    fullPrice.className = "popup__fullprice";
-    fullPrice.innerHTML = "Total";
-    tbl.appendChild(fullPrice);
-    let deleteBtn = document.getElementById("delete");
-    if (Object.keys(bucket).length > 0) {
-        for (let key in bucket) {
-            console.log(`[${key}] = ${bucket[key]}`);
-            let itemData = db.find((el) => key == el.id);
-            if (itemData === undefined) {
-                console.log("ERROR for key:" + key);
-            }
-            let itemCount = bucket[key];
-            shotCartItem(itemData, tableForPopup, itemCount);
-        }
-
-        // counted.forEach(keyValue => {
-        //     let itemData = db.find((el) => id === el.id);
-        //     shotCartItem(itemData, tableForPopup);
-        // });
-        deleteBtn.disabled = false;
-
-    } else {
-        clearCart();
-    }
-
-}
-//Get img/name/price for header
-
-//create card row. Get img/name/price 
-function shotCartItem(itemData, tableElement, count) {
-    let row = tableElement.insertRow();
-
-    let imgCell = row.insertCell();
-    // imgCell.tagName = "img";
-    imgCell.innerHTML = `<img  class="imgrow" src=${itemData.img} alt=""/> `;
-    let nameCell = row.insertCell();
-    nameCell.innerHTML = itemData.name;
-
-    let minusCard = row.insertCell();
-    minusCard.innerHTML = "-";
-    minusCard.onclick = () => {
-        removeFromBucket(itemData);
-    }
-
-    let getCount = row.insertCell();
-    getCount.innerHTML = count;
-
-    let plusCard = row.insertCell();
-    plusCard.innerHTML = "+";
-    plusCard.onclick = () => {
-        addToBucket(itemData);
-    }
-
-
-    let getSumma = row.insertCell();
-    getSumma.innerHTML = itemData.price;
-}
-
-//create card row. Get img/name/price
 
 
 
-function clearCart() {
-    bucket = {};
-    let tableForPopup = document.querySelector("table");
-    if (tableForPopup != null) {
-        tableForPopup.innerHTML = "";
-        let total = document.querySelector(".popup__fullprice");
-        total.innerHTML = " ";
-        let popapHead = document.querySelector(".popup__head");
-        popapHead.innerHTML = " ";
-
-        tableForPopup.innerHTML = "Your shopping basket is empty.";
-        tableForPopup.style.color = "red";
-    }
-    let deleteBtn = document.getElementById("delete");
-
-    deleteBtn.disabled = true;
-    deleteBtn.style.color = "grey";
-    deleteBtn.style.border = "none";
-}
-
-// document.getElementById("button-back").addEventListener("click", emptyCart);
-
-//total 
-//full price
-//plus new cart 
-//minus new cart 
-//delete cart
-
-
-//
-// const priceWithoutSpaces = (str) => {
-//    return str.replace(/\s/g, '');
-// };
-// const normalPrice = (str) => {
-//    return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '')
-// };
-
-
-// let price = 0;
-// const plusFullPrice = (currentPrice) => {
-//    return price += currentPrice;
-// }
-// const minusFullPrice = (currentPrice) => {
-//    return price -= currentPrice;
-// }
 
 // let fullPrice = document.querySelector('.popup__price')
 // const printFullPrice () => {
