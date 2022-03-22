@@ -264,8 +264,6 @@ function removeFromBucket(itemData) {
         }
     }
 }
-
-
 /*
 ADDED NEW EL IN BUCKET
 */
@@ -294,7 +292,14 @@ function showBucket() {
     fullPrice.className = "popup__fullprice";
     fullPrice.innerHTML = "Total";
     tbl.appendChild(fullPrice);
+
+    const fullPriceValue = document.createElement('th');
+    fullPriceValue.className = "fullprice";
+    fullPriceValue.innerHTML = "0";
+    fullPrice.appendChild(fullPriceValue);
+
     let deleteBtn = document.getElementById("delete");
+    let totalAmount = 0;
     if (Object.keys(bucket).length > 0) {
         for (let key in bucket) {
             console.log(`[${key}] = ${bucket[key]}`);
@@ -303,13 +308,18 @@ function showBucket() {
                 console.log("ERROR for key:" + key);
             }
             let itemCount = bucket[key];
-            createBucketItem(itemData, tableForPopup, itemCount);
+            totalAmount += createBucketItem(itemData, tableForPopup, itemCount);;
         }
+
+        //uodate total price
+        fullPriceValue.innerHTML = "$ " + totalAmount;
+
         deleteBtn.disabled = false;
 
     } else {
         clearCart();
     }
+
 
 }
 /*
@@ -343,13 +353,30 @@ function createBucketItem(itemData, tableElement, count) {
 
 
     let getSumma = row.insertCell();
-    getSumma.innerHTML = updatePrice(itemData.price, count);
+    let newPrice = multiplyPrice(itemData.price, count);
+    getSumma.innerHTML = newPrice;
+
+    return getPriceNumber(newPrice);
 }
 
-function updatePrice(price, adjust) {
+
+
+function multiplyPrice(price, adjust) {
     let splitted = price.split(" ");
     let priceNum = splitted[1] + 0;
     priceNum *= adjust;
+
+    return splitted[0] + String(priceNum);
+}
+
+function getPriceNumber(priceStr) {
+    return Number(priceStr.substring(1));
+}
+
+function addPrice(price, add) {
+    let splitted = price.split(" ");
+    let priceNum = splitted[1] + 0;
+    priceNum += adjust;
 
     return splitted[0] + String(priceNum);
 }
@@ -432,9 +459,5 @@ cardRow.onclick = () => {
 
 
 
-// let fullPrice = document.querySelector('.popup__price')
-// const printFullPrice () => {
-//    fullPrice.textContent = `${}  $`;
-// }
 
-// 
+

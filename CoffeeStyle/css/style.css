@@ -263,11 +263,6 @@ body {
 }
 
 .header__coll:hover {
-  border-bottom: 1px solid #A25F4B;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  color: #A25F4B;
   cursor: pointer;
 }
 
@@ -1007,6 +1002,7 @@ table .myTable {
 .myTable tbody td:nth-child(3) {
   width: 5%;
   color: red;
+  cursor: pointer;
 }
 
 .myTable tbody td:nth-child(4) {
@@ -1017,6 +1013,7 @@ table .myTable {
   width: 5%;
   padding-right: 50px;
   color: green;
+  cursor: pointer;
 }
 
 .myTable tbody td:last-child {
