@@ -329,7 +329,11 @@ body {
   font-family: "Larsseit";
   font-weight: normal;
   color: #22356F;
-  max-width: 554px;
+  min-width: 554px;
+}
+
+.-webkit-input-placeholder {
+  display: none;
 }
 
 .columns__row {
@@ -718,7 +722,7 @@ body {
 .popup__content {
   background-color: #fff;
   color: #000;
-  min-width: 400px;
+  width: 400px;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -729,7 +733,7 @@ body {
   transition: all 0.8s ease 0s;
 }
 .popup__popup__form {
-  min-width: 100%;
+  width: 400px;
 }
 .popup__close {
   position: absolute;
@@ -784,6 +788,11 @@ body {
   transition: all 0.3s ease;
   background-color: #FAB63E;
 }
+.popup textarea {
+  width: 100%;
+  resize: none;
+}
+
 @font-face {
   font-family: "Larsseit";
   src: url("../fonts/Larsseit-Bold.eot");
