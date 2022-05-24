@@ -341,7 +341,7 @@ body {
 
 .content__button button:hover {
   background-color: #A25F4B;
-  color: #ffff;
+  color: white;
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
@@ -428,12 +428,12 @@ body {
   font-size: 16px;
   text-decoration: underline;
   padding: 10px;
-  color: #5fa05f;
+  color: rgb(95, 160, 95);
   pointer-events: all;
 }
 
 .hiddenContainer .buyItemBtn:hover {
-  background-color: #5fa05f;
+  background-color: rgb(95, 160, 95);
   color: #000;
   text-decoration: none;
 }
@@ -633,6 +633,10 @@ body {
   padding: 130px 0px 100px 0px;
 }
 
+.background img {
+  width: 100%;
+}
+
 .livestyle__title {
   padding-bottom: 105px;
 }
@@ -734,7 +738,7 @@ body {
 
 .updates__btn:hover {
   background-color: #A25F4B;
-  color: #ffff;
+  color: white;
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
@@ -877,7 +881,7 @@ body {
 }
 
 .popup__closed:hover {
-  color: #eb5b5b;
+  color: rgb(235, 91, 91);
 }
 
 .popup__header {
@@ -900,7 +904,7 @@ body {
 }
 
 .popup__order {
-  padding: 20px 10px 10px 10px;
+  padding: 30px 10px 10px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1018,9 +1022,19 @@ table .myTable {
 
 .myTable tbody td:last-child {
   width: 15%;
+  padding-left: 14px;
 }
 
 .popup__fullprice {
-  padding: 20px 0px 20px 11px;
-  text-align: right;
+  padding: 15px 0px 0px 10px;
+  display: inline-block;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  color: #000;
+}
+
+.fullprice {
+  display: inline-block;
+  padding-left: 394px;
 }

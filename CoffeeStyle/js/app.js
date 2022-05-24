@@ -287,15 +287,13 @@ function showBucket() {
     tableForPopup.id = "table";
     tbl.appendChild(tableForPopup);
 
-
-    const fullPrice = document.createElement('th');
+    const fullPrice = document.createElement('div');
     fullPrice.className = "popup__fullprice";
-    fullPrice.innerHTML = "Total";
+    fullPrice.innerHTML = "Total Price";
     tbl.appendChild(fullPrice);
 
-    const fullPriceValue = document.createElement('th');
+    const fullPriceValue = document.createElement('div');
     fullPriceValue.className = "fullprice";
-    fullPriceValue.innerHTML = "0";
     fullPrice.appendChild(fullPriceValue);
 
     let deleteBtn = document.getElementById("delete");

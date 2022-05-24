@@ -460,6 +460,11 @@ body {
   padding: 130px 0px 100px 0px;
 }
 
+.background img {
+  width: 100%;
+
+}
+
 //LIVESTYLE SECTION STYLE
 .livestyle__title {
   padding-bottom: 105px;
@@ -709,7 +714,7 @@ body {
 }
 
 .popup__order {
-  padding: 20px 10px 10px 10px;
+  padding: 30px 10px 10px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -813,11 +818,23 @@ table .myTable {
 
 .myTable tbody td:last-child {
   width: 15%;
+  padding-left: 14px;
 }
 
 .popup__fullprice {
-  padding: 20px 0px 20px 11px;
-  text-align: right;
+  padding: 15px 0px 0px 10px;
+  display: inline-block;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  color: #000;
 }
+
+.fullprice {
+  display: inline-block;
+  padding-left: 394px;
+}
+
+
 
 //POPUP MODAL SECTION STYLE
