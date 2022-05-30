@@ -3,45 +3,47 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CoffeStyle</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="main">
+        <div class="header">
+            <div class="header__container">
+                <div class="header__row">
+                    <a href="" class="header__logo">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                    <nav class="header__navigator">
+                        <ul class="header__list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#Products">Our Products</a></li>
+                            <li><a href="#Blog">Blog</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="#Contacts">Contacts</a></li>
+                            <li><a href="#Style">Styleguide</a></li>
+                        </ul>
+                    </nav>
 
-            <div class="header">
-                <div class="container">
-                    <div class="header__row">
-                        <div class="header__logo">
-                            <img src="images/logo.png" alt="logo">
+                    <div class="header__item cart-header">
+                        <div class="header__coll" id="cardpopup">
+                            <a href="" class="cart-header__icon _icon-cart"></a>
+                            <div class="header__cartcount">0</div>
+                            <button id="buttontext" class="header__spantext">card</button>
+                            <!-- <ul class="cart-header__list cart-list">
+                            </ul> -->
                         </div>
-                        <div class="header__navigator">
-                            <ul class="header__list">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#Products">Our Products</a></li>
-                                <li><a href="#Blog">Blog</a></li>
-                                <li><a href="#About">About</a></li>
-                                <li><a href="#Contacts">Contacts</a></li>
-                                <li><a href="#Style">Styleguide</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__item cart-header">
-                            <div class="header__coll" id="cardpopup">
-                                <a href="" class="cart-header__icon _icon-cart"></a>
-                                <div class="header__cartcount">0</div>
-                                <button id="buttontext" class="header__spantext">card</button>
-                                <!-- <ul class="cart-header__list cart-list">
-                                </ul> -->
-                            </div>
-                        </div>
+                    </div>
+                    <div class="header__burger">
+                        <span></span>
                     </div>
                 </div>
             </div>
-
-
+        </div>
+        <div class="main">
             <div class="content">
-                <div class="container">
+                <div class="content__container">
                     <div class="content__row">
                         <div class="content__title">Best place to buy design</div>
                         <div class="content__subtitle">Coffee Mugs</div>
@@ -89,21 +91,21 @@
                 </div>
             </div>
             <div class="featured">
-                <div class="container">
+                <div class="featured__container">
                     <div class="featured__title title">Featured Mugs</div>
                     <div class="featured__row">
                     </div>
                 </div>
             </div>
             <div class="products" id="Products">
-                <div class="container">
+                <div class="products__container">
                     <div class="products__title title">More Products</div>
                     <div class="products__row">
                     </div>
                 </div>
             </div>
             <div class="offers" id="About">
-                <div class="container">
+                <div class="offers__container">
                     <div class="offers__title title">Buy 2 mugs and get a coffee magazine free</div>
                     <div class="offers__row">
                         <div class="offers__images">
@@ -129,7 +131,7 @@
                 </div>
             </div>
             <div class="lifestyle" id="Style">
-                <div class="container">
+                <div class="lifestyle__container">
                     <div class="livestyle__title title">Behind the mugs, lifestyle stories</div>
                     <div class="lifestyle__row">
                         <div class="lifestyle__block">
@@ -139,8 +141,9 @@
                                     had
                                     my coffee?</div>
                                 <div class="lifestyle__text">It is a paradisematic country, in which roasted parts of
-                                    sentences fly into your mouth.</div>
-                                <div class="lifestyle__date">October 9, 2018</div>
+                                    sentences fly into your mouth.
+                                </div>
+                                <span class="lifestyle__date">October 9, 2018</span>
                             </div>
                         </div>
                         <div class="lifestyle__block">
@@ -148,8 +151,9 @@
                             <div class="lifestyle__info">
                                 <div class="lifestyle__subtitle">How long does a cup of coffee keep you awake?</div>
                                 <div class="lifestyle__text">It is a paradisematic country, in which roasted parts. Vel
-                                    qui et ad voluptatem.</div>
-                                <div class="lifestyle__date">October 9, 2018</div>
+                                    qui et ad voluptatem.
+                                </div>
+                                <span class="lifestyle__date">October 9, 2018</span>
                             </div>
                         </div>
                         <div class="lifestyle__block">
@@ -158,15 +162,16 @@
                                 <div class="lifestyle__subtitle">Recent research suggests that heavy coffee drinkers may
                                     reap health benefits.</div>
                                 <div class="lifestyle__text">It is a paradisematic country, in which roasted parts of
-                                    sentences fly into your mouth.</div>
-                                <div class="lifestyle__date">October 9, 2018</div>
+                                    sentences fly into your mouth.
+                                </div>
+                                <span class="lifestyle__date">October 9, 2018</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="updates">
-                <div class="container">
+                <div class="updates__container">
                     <div class="updates__main">
                         <div class="updates__subtitle">Sign up and get free coffee bags</div>
                         <div class="updates__title">Coffee Updates</div>
@@ -180,7 +185,7 @@
             </div>
         </div>
         <div class="footer" id="Contacts">
-            <div class="container">
+            <div class="footer__container">
                 <div class="footer__row">
                     <div class="footer__logo">
                         <img src="images/logo.png" alt="logo">
@@ -202,12 +207,11 @@
                     <div class="footer__follow">
                         <div class="footer__title">Follow Us</div>
                         <ul class="footer__list">
-                            <li><a href="#">Facebook</a></li>
-
-                            <li><a href="">Instagram</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Pinterest</a></li>
-                            <li><a href="">Twitter</a></li>
+                            <li><a target="_blank" href="https://www.facebook.com">Facebook</a></li>
+                            <li><a target="_blank" href="https://www.instagram.com">Instagram</a></li>
+                            <li><a href="/">About</a></li>
+                            <li><a target="_blank" href="_blank https://www.pinterest.com/">Pinterest</a></li>
+                            <li><a target="_blank" href="https://twitter.com/">Twitter</a></li>
                         </ul>
                     </div>
                     <div class="footer__contact">
