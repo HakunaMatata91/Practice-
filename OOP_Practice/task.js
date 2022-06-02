@@ -1,24 +1,20 @@
-// 7. Написать функцию, printCreaturesByType(creatures, type). Она как и предыдущая, принимает массив существ и но и тип желамого существа
-// Например вызов - printCreaturesByType(creature, "DOG") должен вывести строку, содержающую лишь имена тех существ,
-//     у которых creature.getCreatureType() === type
-
+// 1. Сделать класс Creature. метод - getCreatureType()
 class Creature {
     constructor(name) {
         this.name = name;
     }
-
     toString() {
         return this.name;
     }
-
     getCreatureType() {
         return 'CREATURE_BASE_TYPE';
     }
 }
-
 let creature = new Creature();
 console.log(creature.getCreatureType());
 
+
+// 2. Сделать класс Dog, наследующий Creature,  метод - getCreatureType()
 class Dog extends Creature {
     constructor(name) {
         super(name);
@@ -32,6 +28,7 @@ class Dog extends Creature {
 let dog = new Dog();
 console.log(dog.getCreatureType());
 
+// 3. Сделать класс Cat, наследующий Creature,  метод - getCreatureType()
 class Cat extends Creature {
     constructor(name) {
         super(name);
@@ -45,6 +42,7 @@ class Cat extends Creature {
 let cat = new Cat();
 console.log(cat.getCreatureType());
 
+// 4. Сделать класс Elephant, наследующий Creature, метод - getCreatureType()
 class Elephant extends Creature {
     constructor(name) {
         super(name);
@@ -58,6 +56,7 @@ class Elephant extends Creature {
 let elephant = new Elephant();
 console.log(elephant.getCreatureType());
 
+// 5. Создать массив creatures = [] c именами животных
 let creatures = [
     new Dog('CHARLIE'),
     new Elephant('Luna'),
@@ -79,8 +78,8 @@ let creatures = [
     new Elephant('Duke'),
 ]
 
-// console.log(creatures)
 
+// 6. Написать функцию printCreatures(creatures), которая принимает массив существ и выводит их имена через запятую, одной строкой
 function printCreatures(creatures) {
     let str = '';
     for (let i = 0; i < creatures.length; i++) {
@@ -94,6 +93,8 @@ function printCreatures(creatures) {
 let nameMyBase = printCreatures(creatures);
 console.log(nameMyBase);
 
+// 7. Написать функцию, printCreaturesByType(creatures, type). Она как и предыдущая, принимает массив существ и  тип желамого существа. Должена вывести строку, содержающую лишь имена тех существ,
+//  у которых creature.getCreatureType() === type
 function printCreaturesByType(creatures, type) {
     let str = '';
     let found = false;
