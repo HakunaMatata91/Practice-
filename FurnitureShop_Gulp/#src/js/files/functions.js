@@ -22,8 +22,7 @@ let  isMobile = {
 };
 function isIE(){
     ua = navigator.userAgent;
-    let is_ie = ua.indexOf('MSIE') > -1 || ua.indexOf("Trident/") > -1;
-    return is_ie;
+    return ua.indexOf('MSIE') > -1 || ua.indexOf("Trident/") > -1;
 }
 if (isIE()){
     document.querySelector('html').classList.add('ie');

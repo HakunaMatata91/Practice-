@@ -44,7 +44,7 @@ radioItem1.type = "radio";
 radioItem1.name = "myRadios";
 radioItem1.id = "myRadios1";
 radioItem1.value = "regions";
-radioItem1.onclick = ()=>{showError(true);};;
+radioItem1.onclick = ()=>{showError(true)};
 regionParent.appendChild(radioItem1);
 
 const objTextNode1 = document.createElement("label");
@@ -95,7 +95,7 @@ selectItem.type = "text";
 selectItem.id = "select";
 selectItem.value = "";
 selectItem.onchange = onSelectChange;
-selectItem.onclick = ()=>{showError(false);};
+selectItem.onclick = ()=>{showError(false)};
 selectItem.name = "Select";
 selectParent.appendChild(selectItem);
 
@@ -113,19 +113,19 @@ err.id = "err";
 err.textContent = "No items, please choose search query";
 containerElement.appendChild(err);
 
-// function for show and hede text "No items, please choose search query"
+// function for show and hide text "No items, please choose search query"
 function showError(show) {
     let element = document.querySelector('.err');
-    element.style.visibility = show?'visible':'hidden';
+    element.style.visibility = show ? 'visible':'hidden';
 }
 
 //function with RegionsList
-function onRegionsClicked(event) {
+function onRegionsClicked() {
     fillSelector(externalService.getRegionsList());
     document.querySelector(".table").innerHTML = "";
 }
 //function with LanguagesList
-function onLanguagesClicked(event) {
+function onLanguagesClicked() {
     fillSelector(externalService.getLanguagesList());
     document.querySelector(".table").innerHTML = "";
 }
@@ -164,7 +164,7 @@ tableWithCountry.className = "table";
 tableWithCountry.id = "myTable";
 containerElement.appendChild(tableWithCountry);
 
-// CreateTabl
+// CreateTable
 const tbl = document.getElementById("myTable");
 
 function createTable(table, items) {
@@ -205,15 +205,14 @@ function createTable(table, items) {
     let i = 0;
     items.forEach(item => {
         let row = table.insertRow();
-        if (i % 2 == 0) {
+        if (i % 2 === 0) {
             //тут мы красим row
             row.style.backgroundColor = "#e2e2e2";
         }
         i++;
-        //get value from data, 
+        //get value from data,
         let langArray = Object.values(item.languages);
         let langString = langArray.join(', ');
-
         let name = row.insertCell().innerHTML = item.name;
         let capital = row.insertCell().innerHTML = item.capital;
         let region = row.insertCell().innerHTML = item.region;
@@ -223,10 +222,10 @@ function createTable(table, items) {
 
     })
 }
-// get el in page 
+// get el in page
 function onSelectChange() {
     let selection = selectItem.value;
-    console.log(`onSelect: ${selection}.`);
+    console.log(`onSelect: ${selection}`);
 
     document.querySelector(".table").innerHTML = " ";
     //check if regions is active
@@ -238,3 +237,4 @@ function onSelectChange() {
         createTable(tbl, tableItems);
     }
 }
+

@@ -26,7 +26,7 @@
   &__main {
     display: flex;
     align-items: center;
-    flex: 0 0 (calc(494px / 1240px) * 100%);
+    flex: 0 0 (calc(494 / 1240) * 100%);
 
     // @media (min-width: ($md2 + px)) {
     //   flex: 0 0 auto;
