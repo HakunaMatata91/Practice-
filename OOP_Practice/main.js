@@ -5,10 +5,12 @@ class Persone {
         this.lastName = lastName
         this.age = age
     }
+
     getFullName() {
         return this.firstName + " " + this.lastName
     }
 }
+
 let user = new Persone("Helen", "Hayden", 30);
 console.log(user)
 console.log(user.age)
@@ -18,12 +20,14 @@ console.log(user.getFullName());
 class Emploee extends Persone {
     _idn;
     _number;
+
     constructor(firstName, lastName, age, idn, number) {
         super(firstName, lastName, age);
         this._idn = idn
         this._number = number
     }
 }
+
 const employer = new Emploee("Keely", "Gilliam", 40, 44, 22)
 console.log(employer.getFullName())
 
@@ -34,27 +38,32 @@ class User {
         this._name = name
         this.surname = surname
     }
+
     getFullName() {
         return this._name + " " + this.surname;
     }
 }
+
 let userInfo = new User("Ioan", "Stephens", 1990)
 console.log(userInfo.getFullName());
 
 
 class Student extends User {
     year;
+
     constructor(name, surname, year) {
         super(name, surname);
         this.year = year
     }
-    getFullName(){
+
+    getFullName() {
         let currentDate = new Date();
         let currentYear = currentDate.getFullYear();
         let result = currentYear - this.year
         return `${super.getFullName()}  finished his studies ${result}  ago`;
     }
 }
+
 let student = new Student('Stevie', 'Cooper', 2015);
 console.log(student.getFullName());
 
@@ -71,32 +80,39 @@ class Worker {
         this._rate = rate;
         this._days = days;
     }
-    getName(){
+
+    getName() {
         return this._name;
     }
-    getSurname(){
+
+    getSurname() {
         return this._surname;
     }
-    getRate(){
+
+    getRate() {
         return `His Rate is ${this._rate}`;
     }
-    getDays(){
+
+    getDays() {
         return `Work day per month ${this._days}`;
     }
 
-    setRate(rate){
+    setRate(rate) {
         this._rate = rate;
         return this;
     }
-    setDays(days){
+
+    setDays(days) {
         this._days = days;
         return this;
     }
-    getSalary(){
+
+    getSalary() {
         let sumOfSalary = this._rate * this._days;
         return `His Salary is  ${sumOfSalary}$`;
     }
 }
+
 let worker = new Worker('Wil', 'Beil', 15, 10);
 console.log(worker.getName())
 console.log(worker.getSurname())
@@ -118,21 +134,25 @@ class Workers2 {
         _rate2.set(this, rate2);
         _days2.set(this, days2);
     }
-    getFullName(){
+
+    getFullName() {
         return _name2.get(this) + " " + _surname2.get(this);
     }
 
-    setRate2(rate2){
+    setRate2(rate2) {
         _rate2.set(this, rate2);
     }
-    setDays2(days2){
+
+    setDays2(days2) {
         _days2.set(this, days2);
     }
-    getRateSalary(){
+
+    getRateSalary() {
         let sumOfPersonSalary = _rate2.get(this) * _days2.get(this);
         return `His Salary is  ${sumOfPersonSalary}$`;
     }
 }
+
 let workers2 = new Workers2('Dylan', 'Dunlap', 13, 10);
 console.log(workers2.getFullName())
 workers2.setRate2(444)
@@ -143,17 +163,20 @@ console.log(workers2.getRateSalary())
 // ucFirst(строка),  а возвращает эту же строку, сделав ее первую букву заглавной
 // ucWords(строка) - делает заглавной первую букву каждого слова этой строки.
 class MyString {
-    reverse(str){
+    reverse(str) {
         return str.split("").reverse().join('');
     }
-    ucFirst(str){
+
+    ucFirst(str) {
         return str[0].toUpperCase() + str.slice(1);
     }
-    ucWords(str){
+
+    ucWords(str) {
         return str.split(/\s+/).map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
 
     }
 }
+
 const str = new MyString();
 console.log(str.reverse('absquatulate'))
 console.log(str.ucFirst('absquatulate'))
@@ -167,19 +190,23 @@ class Validator {
         let validRegex = /^[a-zA-Z\d.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z\d-]+(?:\.[a-zA-Z\d-]+)*$/;
         return !!email.match(validRegex);
     }
-    isDomain(domain){
+
+    isDomain(domain) {
         let re = new RegExp(/^((?:(?:\w[.\-+]?)*\w)+)((?:(?:\w[.\-+]?){0,62}\w)+)\.(\w{2,6})$/);
         return domain.match(re);
     }
-    isDate(date){
+
+    isDate(date) {
         let date_regex = /^\d{1,2}\/*\.*\d{1,2}\/*\.*\d{4}$/;
         return date_regex.test(date)
     }
-    isPhone(phone){
+
+    isPhone(phone) {
         let phoneRegex = /^\+\d{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/;
         return !!phone.match(phoneRegex);
     }
 }
+
 const myValidator = new Validator();
 console.log(myValidator.isEmail('bingo@patreon.com'))
 console.log(myValidator.isDomain('phphtml.net'))
@@ -193,13 +220,16 @@ class Employee3 {
         this.name = name;
         this.salary = salary;
     }
+
     getSalary() {
         return Employee3.#addSign(this.salary);
     }
+
     static #addSign(num) {
         return num + '$';
     }
 }
+
 let newEmploee = new Employee3("John", 340);
 console.log(newEmploee.getSalary())
 
@@ -208,38 +238,46 @@ class Agent {
     #name;
     #sur;
     #age;
+
     constructor(name, sur, age) {
         this.#name = name;
         this.#sur = sur;
         this.#age = age;
     }
+
     //Теперь наши сеттеры можно вызывать друг за другом, цепочкой.
-    setName(name){
+    setName(name) {
         this.#name = name;
         return this;
     }
-    setSur(sur){
+
+    setSur(sur) {
         this.#sur = sur;
         return this;
     }
+
     // проверку на то, что возраст должен быть от 0 до 120.
-    setAge(age){
-        if(age > 0 && age < 120){
+    setAge(age) {
+        if (age > 0 && age < 120) {
             this.#age = age;
-        }else {
+        } else {
             alert('surn is incorrect')
         }
     }
+
     getName() {
         return this.#name;
     }
+
     getSur() {
         return this.#sur;
     }
+
     getAge() {
         return this.#age;
     }
 }
+
 let agent = new Agent('Harry', 'Riley', 99);
 agent.setName('Jack').setSur('Logan')
 agent.setAge(110)
@@ -247,53 +285,56 @@ console.log(agent.getName())
 console.log(agent.getSur())
 console.log(agent.getAge())
 
-///Переберать циклом массив объектов и выведстти в консоль только имена работников.
+///Переберать циклом массив объектов и выведстти в консоль  имена работников и зарплату.
 class DiligentStudent {
-    constructor(name) {
+    constructor(name, salary) {
         this.name = name;
+        this.salary = salary;
     }
 }
+
 class Jobholder {
-    constructor(name) {
+    constructor(name, salary) {
         this.name = name;
+        this.salary = salary;
     }
 }
+
 let users = [
-    new DiligentStudent('Dexter'),
-    new Jobholder('Sullivan'),
-    new DiligentStudent('Gus'),
-    new Jobholder('Waldo'),
-    new DiligentStudent('Leopold'),
-    new Jobholder('Zane'),
-    new DiligentStudent('Matteo'),
+    new DiligentStudent('Dexter', 350),
+    new Jobholder('Sullivan', 890),
+    new DiligentStudent('Gus', 666),
+    new Jobholder('Waldo', 273),
+    new DiligentStudent('Leopold', 2230),
+    new Jobholder('Zane', 3568),
+    new DiligentStudent('Matteo', 872),
 ];
 
-
-for (let i = 0; i < users.length-1; i++ ){
-    console.log(users[i].name)
+for (let i = 0; i < users.length - 1; i++) {
+    let nameResult = `His name is ${users[i].name} and his salary are ${users[i].salary}$`;
+    console.log(nameResult)
 }
 
-class Clerk {
-    constructor(name, position, department) {
-        this.name = name;
-        this.position = position;
-        this.department = department;
+//Сделайте класс EmployeesCollection, который будет содержать массив работников.
+class Vendor {
+    getName(){
+        return this.name;
     }
 }
-class Position {
-    constructor(developer) {
+class Buyer extends Vendor {
+    getSurname(){
+        return this.surname;
     }
+
 }
-class Department {
-    constructor(it) {
-    }
+class Programmer extends Vendor{
+
 }
-let position = new Position('developer');
-let department = new Department('IT');
-let member = new Clerk('Rain', position, department);
-console.log(member.name)
-console.log(member.position)
-console.log(member.department)
+class Designer extends Vendor{
+
+}
+
+
 
 
 
