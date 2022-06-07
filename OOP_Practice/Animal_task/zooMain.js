@@ -1,100 +1,23 @@
-// 1. Сделать класс Creature. метод - getCreatureType()
-//1.2 расширим наш Creature новыми данными (состояние).   Все эти поля должны быть протекед
-import {Dog} from "./Dog";
-
-class Creature {
-    constructor(name, age, maxAge, mass, cameFrom, foodPerDay) {
-        this._name = name;
-        this._age = age;
-        this._maxAge = maxAge;
-        this._mass = mass;
-        this._cameFrom = cameFrom;
-        this._foodPerDay = foodPerDay;
-    }
-
-    setAge(age) {
-        this._age = age;
-    }
-
-    getAge() {
-        return this._age;
-    }
-
-    setMaxAge(maxAge) {
-        this._maxAge = maxAge;
-    }
-
-    getMaxAge() {
-        return this._maxAge;
-    }
-
-    setMass(mass) {
-        this._mass = mass;
-    }
-
-    getMass() {
-        return this._mass;
-    }
-
-    setCameFrom(cameFrom) {
-        this._cameFrom = cameFrom;
-    }
-
-    getCameFrom() {
-        return this._cameFrom;
-    }
-
-    setFoodPerDay(foodPerDay) {
-        this._foodPerDay = foodPerDay;
-    }
-
-    getFoodPerDay() {
-        return this._foodPerDay;
-    }
-
-    toString() {
-        return this._name;
-    }
-
-    getCreatureType() {
-        return 'CREATURE_BASE_TYPE';
-    }
-}
+import {Cat} from "./modules/Cat.js";
+import {Dog} from "./modules/Dog.js";
+import {Elephant} from "./modules/Elephant.js";
+import {Creature} from "./modules/Creature.js";
 
 let creature = new Creature();
 console.log(creature.getCreatureType());
 
 
 let dog = new Dog();
-console.log(dog.getCreatureType());
-
-// 3. Сделать класс Cat, наследующий Creature,  метод - getCreatureType()
-class Cat extends Creature {
-    constructor(name, age, maxAge, mass, cameFrom, foodPerDay) {
-        super(name, age, maxAge, mass, cameFrom, foodPerDay);
-    }
-
-    getCreatureType() {
-        return `CAT`;
-    }
-}
+console.log(`Creature Type is ${dog.getCreatureType()}`);
 
 let cat = new Cat();
-console.log(cat.getCreatureType());
+console.log(`Creature Type is ${cat.getCreatureType()}`);
 
 // 4. Сделать класс Elephant, наследующий Creature, метод - getCreatureType()
-class Elephant extends Creature {
-    constructor(name, age, maxAge, mass, cameFrom, foodPerDay) {
-        super(name, age, maxAge, mass, cameFrom, foodPerDay);
-    }
 
-    getCreatureType() {
-        return `ELEPHANT`;
-    }
-}
 
 let elephant = new Elephant();
-console.log(elephant.getCreatureType());
+console.log(`Creature Type is ${elephant.getCreatureType()}`);
 
 // 5. Создать массив creatures = [] c именами животных
 let creatures = [
@@ -131,7 +54,7 @@ function printCreatures(creatures) {
 }
 
 let nameMyBase = printCreatures(creatures);
-console.log(`массив существ: ${nameMyBase}`);
+console.log(`Name of creatures: ${nameMyBase}`);
 
 // 7. Написать функцию, printCreaturesByType(creatures, type). Она как и предыдущая, принимает массив существ и  тип желамого существа. Должена вывести строку, содержающую лишь имена тех существ,
 //  у которых creature.getCreatureType() === type
@@ -153,17 +76,14 @@ function printCreaturesByType(creatures, type) {
     return str.substring(0, str.length - 1) + '.';
 }
 
-console.log("START print filtered creatures by DOG");
 let resultDog = printCreaturesByType(creatures, "DOG");
-console.log(resultDog);
+console.log(`START print filtered creatures by DOG: ${resultDog}`);
 
-console.log("START print filtered creatures by CAT");
 let resultCat = printCreaturesByType(creatures, "CAT");
-console.log(resultCat);
+console.log(`START print filtered creatures by CAT: ${resultCat}`);
 
-console.log("START print filtered creatures by Elephant");
 let resultElephant = printCreaturesByType(creatures, "CAT");
-console.log(resultElephant);
+console.log(`START print filtered creatures by Elephant: ${resultElephant}`);
 
 //сделать функцию printTotalCreaturesMass()
 function printTotalCreaturesMass(creatures) {
@@ -177,7 +97,7 @@ function printTotalCreaturesMass(creatures) {
 }
 
 let result = printTotalCreaturesMass(creatures);
-console.log(`Total mass for creatures:  ${result} kg`)
+console.log(`Total mass for all creatures:  ${result} kg`)
 
 //сделать функцию printTotalCreaturesMassByType(type). Вывод mass of creatures by type
 function printTotalCreaturesMassByType(creatures, type) {
@@ -239,6 +159,4 @@ let nameBy = printCreatureLifeLeft(creatures, "Archie");
 console.log(`How long does a creatures have to live: ${nameBy}`)
 
 
-
-
-
+// export default class Creature {
