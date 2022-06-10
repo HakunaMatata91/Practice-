@@ -1,0 +1,181 @@
+/*null styles*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    font-size: 14px;
+    overflow: hidden;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+body{
+    background: rgb(234, 161, 30) url("img/dog_bg.png") no-repeat;
+    background-size: contain;
+    background-position-x: right;
+}
+
+.content{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    padding: 250px 0 0 60px;
+}
+.content h1{
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 59px;
+}
+
+.animals__base{
+    display: flex;
+    flex-wrap: wrap;
+}
+.animal{
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 46px;
+    padding: 50px 30px 30px 30px;
+    margin: 127px 30px 40px 0;
+    color: #CA5252;
+    font-size: 24px;
+    font-weight: bold;
+}
+.categoryName{
+    order: 1;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.img{
+    order: 2;
+    flex: 1 1 auto;
+}
+button{
+    order: 3;
+    margin-top: 42px;
+    background: linear-gradient(90deg, #CA5252 11.14%, #D8B250 103.61%);
+    mix-blend-mode: normal;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.50);
+    border-radius: 20px;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 20px;
+}
+ button:hover{
+    background: linear-gradient(90deg, #D8B250 10%,  #CA5252 110.14%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all ease 0.5s;
+}
+
+ .table {
+    display: flex;
+     flex-direction: row;
+     /*justify-content: space-between;*/
+     align-items: center;
+     flex-wrap: wrap;
+}
+
+.itemContainer_PANDA,
+.itemContainer_CAT,
+.itemContainer_KOALA,
+.itemContainer_DOG{
+    padding: 30px 35px 30px 15px;
+    font-size: 20px;
+    border: 1px solid white;
+    margin: 10px 30px 10px 0;
+    line-height: 1.5;
+    border-radius: 26px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+}
+.itemContainer_PANDA{
+    background: linear-gradient(180deg, #D8B250 30%,  #CA5252 90%);
+}
+.itemContainer_CAT{
+    background: linear-gradient(90deg, #D8B250 30%,  #CA5252 100%);
+}
+.itemContainer_DOG{
+    background: linear-gradient(180deg, #D8B250 60%,  #CA5252 80%);
+}
+.itemContainer_KOALA {
+    background: linear-gradient(180deg, #D8B250 30%, #CA5252 100%);
+}
+
+.items{
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+}
+

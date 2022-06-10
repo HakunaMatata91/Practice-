@@ -1,12 +1,11 @@
 import {Creature} from "./Creature.js";
 
-
-class Dog extends Creature {
+class Koala extends Creature {
     constructor(name, age, maxAge, mass, cameFrom, foodPerDay) {
         super(name, age, maxAge, mass, cameFrom, foodPerDay);
     }
 
     getCreatureType() {
-        return `DOG` ;
+        return `KOALA`;
     }
-} export {Dog}
+} export {Koala}
